@@ -1,0 +1,49 @@
+.mCSB_container{width:auto;margin-right:30px;overflow:hidden;}
+.mCSB_container.mCS_no_scrollbar{margin-right:0;}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,
+.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar{margin-right:30px;}
+.mCustomScrollBox>.mCSB_scrollTools{width:16px;height:100%;top:0;right:0;}
+.mCSB_scrollTools .mCSB_draggerContainer
+{position:absolute;top:0;left:0;bottom:0;right:0; height:auto;}
+.mCSB_scrollTools a+.mCSB_draggerContainer{margin:20px 0;}
+.mCSB_scrollTools .mCSB_draggerRail
+{width:2px;height:100%;margin:0 auto;-moz-border-radius:10px;border-radius:10px;}
+.mCSB_scrollTools .mCSB_dragger{cursor:pointer;width:100%;height:30px;}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:4px;height:100%;margin:0 auto;-moz-border-radius:10px;border-radius:10px;text-align:center;}
+
+.mCS-light-blue>.mCSB_scrollTools .mCSB_draggerRail
+{width:4px;-moz-border-radius:2px;border-radius:2px;}
+.mCS-light-blue>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:6px;background:#008dd5;-moz-border-radius:2px;border-radius:2px;}
+.mCS-light-blue.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail
+{width:100%;height:4px;margin:6px 0;}
+.mCS-light-blue.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:100%;height:6px;margin:5px auto;}
+.mCS-light-blue>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCS-light-blue>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.mCS-light-blue>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar{background:#008dd5;}
+
+.mCS-light-white>.mCSB_scrollTools .mCSB_draggerRail
+{width:4px;-moz-border-radius:2px;border-radius:2px;}
+.mCS-light-white>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:6px;background:white;-moz-border-radius:2px;border-radius:2px;}
+.mCS-light-white.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail
+{width:100%;height:4px;margin:6px 0;}
+.mCS-light-white.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:100%;height:6px;margin:5px auto;}
+.mCS-light-white>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCS-light-white>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.mCS-light-white>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar{background:white;}
+
+.mCS-light-pink>.mCSB_scrollTools .mCSB_draggerRail
+{width:4px;-moz-border-radius:2px;border-radius:2px;}
+.mCS-light-pink>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:6px;background:#f76f76;-moz-border-radius:2px;border-radius:2px;}
+.mCS-light-pink.mCSB_horizontal>.mCSB_scrollTools .mCSB_draggerRail
+{width:100%;height:4px;margin:6px 0;}
+.mCS-light-pink.mCSB_horizontal>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{width:100%;height:6px;margin:5px auto;}
+.mCS-light-pink>.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCS-light-pink>.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.mCS-light-pink>.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar{background:#f76f76;}
