@@ -8,8 +8,8 @@ month_name = {0:"", 1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:
 master_username = "aryasourya"
 master_password = "123456"
 
-db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6109617",passwd="VCDwEsfbel",db="sql6109617")
-# db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+# db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6109617",passwd="VCDwEsfbel",db="sql6109617")
+db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
 # query = "SELECT * FROM information_schema.tables"
 # query = "update t1 set pics='Y' where serial='Coupling'"

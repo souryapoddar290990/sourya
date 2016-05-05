@@ -179,9 +179,6 @@ from email import encoders
 # print company.get_price_book()
 # print company.get_short_ratio()
 
-
-
-
 # import MySQLdb
 # from random import randint
 # db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="practice")
@@ -208,9 +205,12 @@ from email import encoders
 #     time.sleep(1)
 
 def my_funct(symbol,time,day):
+    if symbol == "MRF": symb_code = "500290"
+    else: symb_code = symbol
     url_root = 'http://www.google.com/finance/getprices?i='
     url_root += str(time) + '&p=' + str(day)
-    url_root += 'd&f=d,o,h,l,c,v&df=cpct&q=' + symbol
+    url_root += 'd&f=d,o,h,l,c,v&df=cpct&q=' + symb_code
+    # print url_root
     response = urllib2.urlopen(url_root)
     data = response.read().split('\n')
     data_time,data_open,data_high,data_low,data_close,data_volume,start_time,day_open = [],[],[],[],[],[],0,0
@@ -231,7 +231,7 @@ def my_funct(symbol,time,day):
         day_close = float(data_item[4])
     # print len(data_open)
     day_high = max(data_high)
-    day_low = max(data_low)
+    day_low = min(data_low)
     day_volume = int(sum(data_volume))
     day_perc = 100*(day_close-day_open)/day_open
     fig = plt.figure()
@@ -255,44 +255,50 @@ def share_mail(company_list):
     msg += '</table></body></html>'
     return msg
 
-fromaddr = 'souryapoddar290990@gmail.com'
-toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
-password = "souryaindia"
-subject = "SHARE UPDATE"
-company_list = ["BHEL","COALINDIA","POWERGRID","RPOWER","SBBJ","SBIN","TATASTEEL","VOLTAS"]
-path = ''
-filename = ''
-body = share_mail(company_list)
-msg = MIMEMultipart()
-msg['From'] = fromaddr
-msg['To'] = ",".join(toaddr)
-msg['Subject'] = subject
-msg.attach(MIMEText(body, 'html'))
-for item in company_list:
-    filename = item+".png"
-    attachment = open(path+filename, "rb")
-    part = MIMEBase('application', 'octet-stream')
-    part.set_payload((attachment).read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-    msg.attach(part)
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(fromaddr,password)
-text = msg.as_string()
-server.sendmail(fromaddr, toaddr, text)
-server.quit()
+def send_mail():
+    fromaddr = 'souryapoddar290990@gmail.com'
+    toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
+    password = "souryaindia"
+    subject = "SHARE UPDATE"
+    company_list = ["BHEL","COALINDIA","ICICIBANK","MRF","POWERGRID","RPOWER","SBBJ","SBIN","TATASTEEL","VOLTAS"]
+    path = ''
+    filename = ''
+    body = share_mail(company_list)
+    msg = MIMEMultipart()
+    msg['From'] = fromaddr
+    msg['To'] = ",".join(toaddr)
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'html'))
+    for item in company_list:
+        filename = item+".png"
+        attachment = open(path+filename, "rb")
+        part = MIMEBase('application', 'octet-stream')
+        part.set_payload((attachment).read())
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+        msg.attach(part)
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(fromaddr,password)
+    text = msg.as_string()
+    server.sendmail(fromaddr, toaddr, text)
+    server.quit()
 
-# from pushbullet import Pushbullet
-# API_KEY = 'o.nYHrQiyqBr2NTj59HaQFSSGsgoLDYQrv'
-# # API_KEY = 'o.gmWPEjdjJvbZRqnTvCc7sHkonggCW48I'
-# pb = Pushbullet(API_KEY)
-# print pb.devices
-# company_list = ["BHEL","COALINDIA","POWERGRID","RPOWER","SBBJ","SBIN","TATASTEEL","VOLTAS"]
-# title = "Share"
-# text = ""
-# for item in company_list:
-#     t1,t2,t3,t4,t5,t6 = my_funct(item,60,1)
-#     text = item+' '+str(t1)+' '+str(t2)+' '+str(t3)+' '+str(t4)+' '+str(t6)+"\n"
-#     push = pb.push_note(title,text)
+send_mail()
+
+def send_push():
+    from pushbullet import Pushbullet
+    API_KEY = 'o.nYHrQiyqBr2NTj59HaQFSSGsgoLDYQrv'
+    # API_KEY = 'o.gmWPEjdjJvbZRqnTvCc7sHkonggCW48I'
+    pb = Pushbullet(API_KEY)
+    print pb.devices
+    company_list = ["BHEL","COALINDIA","POWERGRID","RPOWER","SBBJ","SBIN","TATASTEEL","VOLTAS"]
+    title = "Share"
+    text = ""
+    for item in company_list:
+        t1,t2,t3,t4,t5,t6 = my_funct(item,60,1)
+        text = item+' '+str(t1)+' '+str(t2)+' '+str(t3)+' '+str(t4)+' '+str(t6)+"\n"
+        push = pb.push_note(title,text)
+
+# send_push()
 

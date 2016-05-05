@@ -99,7 +99,11 @@ def main_funct():
 		if flag2 == 3: flag0, flag1, flag2 = 0, 0, 0	
 		if flag2 == 4: return 0
 
-def episodes_view_future(serial,season_exist,episode_exist,url_temp,series_id):
+# main_funct()
+
+def episodes_view_future():
+	info = raw_input('Please enter details: ').split(",")
+	url_temp,serial,season_exist,episode_exist,series_id = 'http://thetvdb.com/',info[0],int(info[1]),int(info[2]),info[3]
 	url_page2 = url_temp + '?tab=seasonall&id=' + series_id + '&lid=7'
 	text2 = BeautifulSoup(requests.get(url_page2).text)
 	for row_num in range(1,len(text2.select("#listtable tr"))):
@@ -118,9 +122,9 @@ def episodes_view_future(serial,season_exist,episode_exist,url_temp,series_id):
 				try: summary = text3.select("#datatable tr")[7].findAll('td')[1].findAll('textarea', {'name':'Overview_7'})[0].text.strip()
 				except: summary = ""
 				print 'insert into t1 values ("'+serial.title()+'","'+name.title()+'",'+str(season)+','+str(episode)+',"No","No","No",'+str(date[2])+','+str(date[1])+','+str(date[0])+',"'+summary+'","N","N");'
-		except Exception,e: pass
+		except Exception,e: print e
 
-# main_funct()
+# episodes_view_future()
 
 def get_date(time):
 	temp = datetime.datetime.fromtimestamp(time)
@@ -170,43 +174,52 @@ def serial_mail():
 	msg += '</table></body></html>'
 	return msg
 
-fromaddr = 'souryapoddar290990@gmail.com'
-toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
-password = "souryaindia"
-subject = "SERIAL UPDATE"
-body = serial_mail()
-# print body
-msg = MIMEMultipart()
-msg['From'] = fromaddr
-msg['To'] = ",".join(toaddr)
-msg['Subject'] = subject
-msg.attach(MIMEText(body, 'html'))
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(fromaddr,password)
-text = msg.as_string()
-server.sendmail(fromaddr, toaddr, text)
-server.quit()
+def send_mail():
+	fromaddr = 'souryapoddar290990@gmail.com'
+	toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
+	password = "souryaindia"
+	subject = "SERIAL UPDATE"
+	body = serial_mail()
+	# print body
+	msg = MIMEMultipart()
+	msg['From'] = fromaddr
+	msg['To'] = ",".join(toaddr)
+	msg['Subject'] = subject
+	msg.attach(MIMEText(body, 'html'))
+	server = smtplib.SMTP('smtp.gmail.com', 587)
+	server.starttls()
+	server.login(fromaddr,password)
+	text = msg.as_string()
+	server.sendmail(fromaddr, toaddr, text)
+	server.quit()
 
-# from pushbullet import Pushbullet
-# API_KEY = 'o.nYHrQiyqBr2NTj59HaQFSSGsgoLDYQrv'
-# API_KEY = 'o.gmWPEjdjJvbZRqnTvCc7sHkonggCW48I'
-# pb = Pushbullet(API_KEY)
-# current_time = time.time()-86400
-# day,month,year = get_date(current_time)	
-# today = str(year)+'-'+str(month)+'-'+str(day)
-# kickass = 'http://kickass.to/usearch/'
-# db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
-# cursor = db.cursor()
-# query = "select serial,tvdb_id,name from t3"
-# cursor.execute(query)
-# data = cursor.fetchall()
-# title = "Serial"
-# text = ""
-# for item in data:
-# 	doc = episodes_today(item[0],"http://thetvdb.com/",str(item[1]),today)
-# 	for vals in doc:
-# 		val = vals.split(",")
-# 		serial,season,episode = val[0],val[1],val[2]
-# 		text += serial+' '+season+'.'+episode+'\n'
-# push = pb.push_note(title,text)
+send_mail()
+
+def send_push():
+	from pushbullet import Pushbullet
+	API_KEY = 'o.nYHrQiyqBr2NTj59HaQFSSGsgoLDYQrv'
+	API_KEY = 'o.gmWPEjdjJvbZRqnTvCc7sHkonggCW48I'
+	pb = Pushbullet(API_KEY)
+	current_time = time.time()-86400
+	day,month,year = get_date(current_time)	
+	today = str(year)+'-'+str(month)+'-'+str(day)
+	kickass = 'http://kickass.to/usearch/'
+	db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+	cursor = db.cursor()
+	query = "select serial,tvdb_id,name from t3"
+	cursor.execute(query)
+	data = cursor.fetchall()
+	title = "Serial"
+	text = ""
+	for item in data:
+		doc = episodes_today(item[0],"http://thetvdb.com/",str(item[1]),today)
+		for vals in doc:
+			val = vals.split(",")
+			serial,season,episode = val[0],val[1],val[2]
+			text += serial+' '+season+'.'+episode+'\n'
+	push = pb.push_note(title,text)
+
+# send_push()
+
+
+
