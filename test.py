@@ -12,6 +12,7 @@ from collections import Counter
 
 db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
+foldername = "I:/ARYA SOURYA/TELEVISION/"
 
 def get_immediate_subfolders(folder_name):
 	paths = glob.glob(folder_name+'/*')
@@ -102,7 +103,7 @@ def check_capital(name):
 
 def check_filename(filename,cursor):
 	try:
-		item = filename.replace("\\","/").replace("I:/ARYA SOURYA/TELEVISION/","").replace(".mkv","").replace("/","?").split("?")
+		item = filename.replace("\\","/").replace(foldername,"").replace(".mkv","").replace("/","?").split("?")
 		# print item
 		serial = item[0]
 		season = item[1].replace("SEASON ","")
@@ -145,11 +146,11 @@ def get_size(filename):
 	return stats.st_size
 
 def check_him_present():
-	temp = get_all_type_files("I:/ARYA SOURYA/TELEVISION/HOW ITS MADE/",".mkv")
+	temp = get_all_type_files(foldername+"HOW ITS MADE/",".mkv")
 	duration = []
 	number = 0
 	for item in temp:
-		item_new = item.replace("I:/ARYA SOURYA/TELEVISION/HOW ITS MADE/","").split("\\")[2].replace(".mkv","")
+		item_new = item.replace(foldername+"HOW ITS MADE/","").split("\\")[2].replace(".mkv","")
 		if check_capital(item_new) == 0: print "DECAPITALIZED FILENAME",item_new
 		# print item
 		corrupt = check_corrupt(item)		
@@ -176,7 +177,7 @@ def check_him_present():
 			if len(vid) == 0: print "MISSING SUMMARY ENTRY",season,episode
 			else:
 				len_data += 1
-				filename = "I:/ARYA SOURYA/TELEVISION/HOW ITS MADE/SEASON "+str(season)+"/"+name+"/"+vid+".mkv"
+				filename = foldername+"HOW ITS MADE/SEASON "+str(season)+"/"+name+"/"+vid+".mkv"
 				if os.path.isfile(filename) == False: print "NO FILE",filename
 				if check_capital(vid) == 0: print "DECAPITALIZED SUMMARY",filename
 	if len(temp) != len_data: print "COUNT MISMATCH"
@@ -193,7 +194,7 @@ def health_report(foldername,cursor):
 		episodes = get_all_type_files(serial,".mkv")
 		duration = []
 		number = 0
-		query = 'select count(*) from t1 where serial="'+serial.replace("I:/ARYA SOURYA/TELEVISION\\","")+'"'
+		query = 'select count(*) from t1 where serial="'+serial.replace(foldername+"\\","")+'"'
 		cursor.execute(query)
 		data_count = cursor.fetchone()
 		for episode in episodes:
@@ -203,7 +204,7 @@ def health_report(foldername,cursor):
 				if "SEASON" in episode:
 					number += check_filename(episode,cursor)
 					height,width,video_codec,frequency,audio_codec,runtime = get_video_audio_details(episode)
-					print width,episode
+					# print width,episode
 					if video_codec != "V_MPEGH/ISO/HEVC": print "VIDEO CODEC",episode
 					if audio_codec != "A_AAC": print "AUDIO CODEC",episode
 					duration.append(runtime)
@@ -211,11 +212,10 @@ def health_report(foldername,cursor):
 				if chapter == "YES": print "CHAPTER PRESENT",episode
 				# print episode,"TIME",runtime,"CHAPTER",chapter
 		if int(data_count[0]) != number: print "COUNT MISMATCH"
-		# print serial,"DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
+		print serial,"DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
 		print "#####################################################################################"
 
-foldername = "I:/ARYA SOURYA/TELEVISION/friends"
-health_report(foldername,cursor)
+# health_report(foldername,cursor)
 
 def check_image_size(filename):
 	im = Image.open(filename)
@@ -231,31 +231,66 @@ def check_images_present(foldername):
 		if int(item[2])<10: filename = "0"+str(item[2])+".png"
 		else: filename = str(item[2])+".png"
 		location = foldername+"/"+item[0]+"/"+str(item[1])+"/"+filename
-		if os.path.isfile(location) == False: pass#print "NO PICS",location
+		if os.path.isfile(location) == False: print "NO PICS",location
 		else:
 			a,b = check_image_size(location)
 			temp["a"].append(a)
 			temp["b"].append(b)
-	print Counter(temp["a"])
-	print Counter(temp["b"])
+	# print Counter(temp["a"])
+	# print Counter(temp["b"])
 
 	return 0
 
 # check_images_present("D:/tc\static\img")
 
-def check_db_filename():
-	query = 'select serial,season,episode,name from t1'
+def check_db_filename_summary():
+	query = 'select serial,season,episode,name,summary from t1'
 	cursor.execute(query)
 	data = cursor.fetchall()
 	for item in data:
 		if check_capital(item[3]) == 0: print item
+		if item[4].endswith("\n"): print item[:3]
+		print item[1],item[2],item[4]
+		# time.sleep(1)
 
-# check_db_filename()
+# check_db_filename_summary()
 
 # urlnew = urllib2.urlopen(url)
 # content = urlnew.read()
 # print content
 
-# data = get_all_type_files("D:/tc\static\img\DreamWorks Dragons",".png")
+# data = get_all_type_files("E:\New folder/tv\sam x\SEASON 1",".mkv")
 # for item in data:
-# 	print item,check_image_size(item)
+# 	print get_video_audio_details(item)[0],float(get_video_audio_details(item)[1]),item
+
+# import webbrowser
+# import pyscreenshot as ImageGrab
+
+# def generate_him_images():
+# 	query = 'select season,episode,name,summary from t1 where serial="How Its Made" and season=26'
+# 	cursor.execute(query)
+# 	data = cursor.fetchall()
+# 	for item in data:
+# 		filename = str(item[0])+"-"+str(item[1])
+# 		f = open(filename+".html","w")
+# 		msg = ''
+# 		summary = item[3]
+# 		summary = summary.replace("This episode demonstrates the production processes for ","").replace(" and",",").replace(".","").split(", ")
+# 		# print item[0],item[1],item[2],len(summary)
+# 		if len(summary) == 4:
+# 			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:150px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
+# 			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr><tr><td id="a">'+summary[3]+'</td></tr>'
+# 			msg += '</table></body></html>'
+# 		else:
+# 			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:200px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
+# 			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr>'
+# 			msg += '</table></body></html>'
+# 		f.write(msg)
+# 		f.close()
+
+# generate_him_images()
+
+# filename = '26-13'
+# webbrowser.open(filename+'.html')
+# im=ImageGrab.grab(bbox=(10,10,500,500))
+# im.show()

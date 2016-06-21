@@ -205,7 +205,9 @@ from email import encoders
 #     time.sleep(1)
 
 def my_funct(symbol,time,day):
-    if symbol == "MRF": symb_code = "500290"
+    if symbol in ["MRF","SPICEJET"]:
+        if symbol == "MRF": symb_code = "500290"
+        if symbol == "SPICEJET": symb_code = "500285"
     else: symb_code = symbol
     url_root = 'http://www.google.com/finance/getprices?i='
     url_root += str(time) + '&p=' + str(day)
@@ -244,6 +246,7 @@ def my_funct(symbol,time,day):
     # plt.show()
     fig.savefig(symbol+'.png')
     return day_open,day_close,day_high,day_low,day_volume,round(day_perc,2)
+    # return data_time,data_open
 
 def share_mail(company_list):
     msg = '<html><body><table style="font-family:Segoe UI;border:1px solid black"><tr><td>NAME</td><td>OPEN</td><td>CLOSE</td><td>HIGH</td><td>LOW</td><td>VOLUME</td><td>PERC</td><tr>'
@@ -257,10 +260,11 @@ def share_mail(company_list):
 
 def send_mail():
     fromaddr = 'souryapoddar290990@gmail.com'
-    toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
+    toaddr = ["ashoke.poddar@sbbj.co.in","asokepoddar090160@gmail.com","aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
     password = "souryaindia"
     subject = "SHARE UPDATE"
-    company_list = ["BHEL","COALINDIA","ICICIBANK","MRF","POWERGRID","RPOWER","SBBJ","SBIN","TATASTEEL","VOLTAS"]
+    company_list = ["ARVINFRA","BHEL","COALINDIA","ICICIBANK","MRF","POWERGRID","RPOWER","SBBJ","SBIN","SPICEJET","STOREONE","TATASTEEL","THYROCARE","VOLTAS"]
+    # company_list = ["MRF"]
     path = ''
     filename = ''
     body = share_mail(company_list)
@@ -301,4 +305,8 @@ def send_push():
         push = pb.push_note(title,text)
 
 # send_push()
+
+# data_time,data_open = my_funct("POWERGRID",120,60)
+# for item in range(len(data_time)):
+#     print data_time[item],data_open[item]
 
