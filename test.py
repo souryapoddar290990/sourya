@@ -10,9 +10,9 @@ from email import encoders
 from PIL import Image
 from collections import Counter
 
-db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
-cursor = db.cursor()
-foldername = "I:/ARYA SOURYA/TELEVISION/"
+# db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+# cursor = db.cursor()
+# foldername = "I:/ARYA SOURYA/TELEVISION/"
 
 def get_immediate_subfolders(folder_name):
 	paths = glob.glob(folder_name+'/*')

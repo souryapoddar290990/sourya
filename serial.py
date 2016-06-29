@@ -177,7 +177,7 @@ def serial_mail():
 def send_mail():
 	fromaddr = 'souryapoddar290990@gmail.com'
 	toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
-	password = "souryaindia"
+	password = "****"
 	subject = "SERIAL UPDATE"
 	body = serial_mail()
 	# print body

@@ -30,7 +30,7 @@ def football_mail():
 
 # fromaddr = 'souryapoddar290990@gmail.com'
 # toaddr = ["aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
-# password = "souryaindia"
+# password = "****"
 # subject = "FOOTBALL UPDATE"
 # body = football_mail()
 # # print body

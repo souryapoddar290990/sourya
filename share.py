@@ -261,7 +261,7 @@ def share_mail(company_list):
 def send_mail():
     fromaddr = 'souryapoddar290990@gmail.com'
     toaddr = ["ashoke.poddar@sbbj.co.in","asokepoddar090160@gmail.com","aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
-    password = "souryaindia"
+    password = "****"
     subject = "SHARE UPDATE"
     company_list = ["ARVINFRA","BHEL","COALINDIA","ICICIBANK","MRF","POWERGRID","RPOWER","SBBJ","SBIN","SPICEJET","STOREONE","TATASTEEL","THYROCARE","VOLTAS"]
     # company_list = ["MRF"]
