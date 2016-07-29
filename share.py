@@ -205,9 +205,10 @@ from email import encoders
 #     time.sleep(1)
 
 def my_funct(symbol,time,day):
-    if symbol in ["MRF","SPICEJET"]:
+    if symbol in ["LTI","MRF","SPICEJET"]:
         if symbol == "MRF": symb_code = "500290"
         if symbol == "SPICEJET": symb_code = "500285"
+        if symbol == "LTI": symb_code = "540005"
     else: symb_code = symbol
     url_root = 'http://www.google.com/finance/getprices?i='
     url_root += str(time) + '&p=' + str(day)
@@ -261,10 +262,10 @@ def share_mail(company_list):
 def send_mail():
     fromaddr = 'souryapoddar290990@gmail.com'
     toaddr = ["ashoke.poddar@sbbj.co.in","asokepoddar090160@gmail.com","aryapoddar290990@gmail.com","souryapoddar290990@gmail.com"]
-    password = "****"
+    password = "souryaindia"
     subject = "SHARE UPDATE"
-    company_list = ["ARVINFRA","BHEL","COALINDIA","ICICIBANK","MRF","POWERGRID","RPOWER","SBBJ","SBIN","SPICEJET","STOREONE","TATASTEEL","THYROCARE","VOLTAS"]
-    # company_list = ["MRF"]
+    company_list = ["ARVINFRA","BHEL","COALINDIA","ICICIBANK","LTI","MRF","POWERGRID","RPOWER","SBBJ","SBIN","SPICEJET","STOREONE","TATASTEEL","THYROCARE","VOLTAS"]
+    # company_list = ["LTI"]
     path = ''
     filename = ''
     body = share_mail(company_list)
@@ -296,7 +297,7 @@ def send_push():
     # API_KEY = 'o.gmWPEjdjJvbZRqnTvCc7sHkonggCW48I'
     pb = Pushbullet(API_KEY)
     print pb.devices
-    company_list = ["BHEL","COALINDIA","POWERGRID","RPOWER","SBBJ","SBIN","TATASTEEL","VOLTAS"]
+    company_list = ["ARVINFRA","BHEL","COALINDIA","ICICIBANK","LTI","MRF","POWERGRID","RPOWER","SBBJ","SBIN","SPICEJET","STOREONE","TATASTEEL","THYROCARE","VOLTAS"]
     title = "Share"
     text = ""
     for item in company_list:

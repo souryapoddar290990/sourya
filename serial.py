@@ -99,7 +99,7 @@ def main_funct():
 		if flag2 == 3: flag0, flag1, flag2 = 0, 0, 0	
 		if flag2 == 4: return 0
 
-# main_funct()
+main_funct()
 
 def episodes_view_future():
 	info = raw_input('Please enter details: ').split(",")
@@ -193,7 +193,7 @@ def send_mail():
 	server.sendmail(fromaddr, toaddr, text)
 	server.quit()
 
-send_mail()
+# send_mail()
 
 def send_push():
 	from pushbullet import Pushbullet

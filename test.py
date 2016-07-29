@@ -10,9 +10,9 @@ from email import encoders
 from PIL import Image
 from collections import Counter
 
-# db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
-# cursor = db.cursor()
-# foldername = "I:/ARYA SOURYA/TELEVISION/"
+db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+cursor = db.cursor()
+foldername = "G:/ARYA SOURYA/TELEVISION/"
 
 def get_immediate_subfolders(folder_name):
 	paths = glob.glob(folder_name+'/*')
@@ -181,7 +181,7 @@ def check_him_present():
 				if os.path.isfile(filename) == False: print "NO FILE",filename
 				if check_capital(vid) == 0: print "DECAPITALIZED SUMMARY",filename
 	if len(temp) != len_data: print "COUNT MISMATCH"
-	# print serial,"DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
+	print foldername[:len(foldername)-1]+"\HOW ITS MADE DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
 	print "#####################################################################################"
 
 def health_report(foldername,cursor):
@@ -194,7 +194,7 @@ def health_report(foldername,cursor):
 		episodes = get_all_type_files(serial,".mkv")
 		duration = []
 		number = 0
-		query = 'select count(*) from t1 where serial="'+serial.replace(foldername+"\\","")+'"'
+		query = 'select count(*) from t1 where serial="'+serial.replace(foldername[:len(foldername)-1]+"\\","")+'"'
 		cursor.execute(query)
 		data_count = cursor.fetchone()
 		for episode in episodes:
@@ -215,7 +215,7 @@ def health_report(foldername,cursor):
 		print serial,"DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
 		print "#####################################################################################"
 
-# health_report(foldername,cursor)
+health_report(foldername,cursor)
 
 def check_image_size(filename):
 	im = Image.open(filename)
@@ -294,3 +294,4 @@ def check_db_filename_summary():
 # webbrowser.open(filename+'.html')
 # im=ImageGrab.grab(bbox=(10,10,500,500))
 # im.show()
+
