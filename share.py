@@ -49,7 +49,6 @@ from email import encoders
 #     response = urllib2.urlopen(url_root)
 #     data = response.read().split('\n')
 #     pprint.pprint(data)
-#     #actual data starts at index = 7 first line contains full timestamp, every other line is offset of period from timestamp
 #     parsed_data = []
 #     anchor_stamp = ''
 #     end = len(data)
