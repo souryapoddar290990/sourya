@@ -1,18 +1,20 @@
-import facebook,os,sys,urllib2,json,pprint,omdb,requests,time,datetime,xlwt,MySQLdb,csv,glob,enzyme,subprocess,re
+import facebook,os,sys,urllib2,json,pprint,omdb,requests,time,datetime,xlwt,MySQLdb,csv,glob,enzyme,subprocess,re,webbrowser
 import numpy as np
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 import smtplib
+import pyscreenshot as ImageGrab
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEBase import MIMEBase
 from email import encoders
 from PIL import Image
 from collections import Counter
+from iplotter import C3Plotter,ChartsJSPlotter
 
 db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
-foldername = "G:/ARYA SOURYA/TELEVISION/"
+# foldername = "G:/ARYA SOURYA/TELEVISION/"
 
 def get_immediate_subfolders(folder_name):
 	paths = glob.glob(folder_name+'/*')
@@ -79,6 +81,11 @@ def get_duration(filename):
 	with open(filename,'rb') as ff:
 		details = enzyme.MKV(ff)
 		return details.info.duration
+
+def get_folder_duration(foldername,filetype):
+	runtime = []
+	for item in get_all_type_files(foldername,filetype): runtime.append(get_duration(item))
+	return sum(runtime,datetime.timedelta()),len(runtime)
 
 def get_video_audio_details(filename):
 	with open(filename,'rb') as ff:
@@ -215,7 +222,7 @@ def health_report(foldername,cursor):
 		print serial,"DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
 		print "#####################################################################################"
 
-health_report(foldername,cursor)
+# health_report(foldername,cursor)
 
 def check_image_size(filename):
 	im = Image.open(filename)
@@ -263,35 +270,148 @@ def check_db_filename_summary():
 # for item in data:
 # 	print get_video_audio_details(item)[0],float(get_video_audio_details(item)[1]),item
 
-# import webbrowser
-# import pyscreenshot as ImageGrab
-
-# def generate_him_images():
-# 	query = 'select season,episode,name,summary from t1 where serial="How Its Made" and season=26'
-# 	cursor.execute(query)
-# 	data = cursor.fetchall()
-# 	for item in data:
-# 		filename = str(item[0])+"-"+str(item[1])
-# 		f = open(filename+".html","w")
-# 		msg = ''
-# 		summary = item[3]
-# 		summary = summary.replace("This episode demonstrates the production processes for ","").replace(" and",",").replace(".","").split(", ")
-# 		# print item[0],item[1],item[2],len(summary)
-# 		if len(summary) == 4:
-# 			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:150px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
-# 			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr><tr><td id="a">'+summary[3]+'</td></tr>'
-# 			msg += '</table></body></html>'
-# 		else:
-# 			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:200px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
-# 			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr>'
-# 			msg += '</table></body></html>'
-# 		f.write(msg)
-# 		f.close()
+def generate_him_images():
+	query = 'select season,episode,name,summary from t1 where serial="How Its Made" and season=26'
+	cursor.execute(query)
+	data = cursor.fetchall()
+	for item in data:
+		filename = str(item[0])+"-"+str(item[1])
+		f = open(filename+".html","w")
+		msg = ''
+		summary = item[3]
+		summary = summary.replace("This episode demonstrates the production processes for ","").replace(" and",",").replace(".","").split(", ")
+		# print item[0],item[1],item[2],len(summary)
+		if len(summary) == 4:
+			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:150px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
+			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr><tr><td id="a">'+summary[3]+'</td></tr>'
+			msg += '</table></body></html>'
+		else:
+			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:200px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
+			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr>'
+			msg += '</table></body></html>'
+		f.write(msg)
+		f.close()
 
 # generate_him_images()
 
-# filename = '26-13'
-# webbrowser.open(filename+'.html')
-# im=ImageGrab.grab(bbox=(10,10,500,500))
-# im.show()
+def take_screenshot(filename):
+	webbrowser.open(filename+'.html')
+	im=ImageGrab.grab(bbox=(10,10,500,500))
+	im.show()
+
+# take_screenshot('26-13')
+
+def get_tv_statistics():
+	query = 'select t2.genre,sum(t2.runtime) from t1 inner join t2 where t1.serial=t2.serial group by t2.genre'
+	cursor.execute(query)
+	result = cursor.fetchall()
+	columns = [['Misc',0]]
+	misc_list = ['Game','Musical','Science']
+	for item in result:
+		if item[0] in misc_list:
+			columns[0][1] += item[1]
+		else:
+			columns.append([item[0],item[1]])
+	return columns
+
+# columns = get_tv_statistics()
+
+def get_tv_seen_statistics(key,value):
+	query = 'select t2.genre,sum(t2.runtime) from t1 inner join t2 where (t1.serial=t2.serial and t1.'+key+' != "'+value+'") group by t2.genre'
+	cursor.execute(query)
+	result = cursor.fetchall()
+	columns = {'Misc':0}
+	misc_list = ['Game','Musical','Science']
+	for item in result:
+		if item[0] in misc_list:
+			columns['Misc'] += item[1]
+		else:
+			columns[item[0]] = item[1]
+	return columns
+
+# seena = get_tv_seen_statistics('seena','No')
+# seens = get_tv_seen_statistics('seens','No')
+# subs = get_tv_seen_statistics('sub','No')
+# pics = get_tv_seen_statistics('pics','N')
+
+def generate_donut_chart(columns,title):
+	plotter = C3Plotter()
+	chart = {
+		'data': {
+			'columns':columns,
+			'type' : 'donut',
+		},
+		'donut': {
+			'title': title
+		}
+	}
+	plotter.plot_and_save(chart)
+
+# generate_chart(columns,"Show Type Statistics")
+
+def generate_radar_chart(labels,data1,data2):
+	plotter = ChartsJSPlotter()
+
+	data = {
+		"labels": labels,
+		"datasets": [
+			{
+				"label": "Arya",
+				"fillColor": "rgba(255,122,122,0.2)",
+				"strokeColor": "rgba(255,122,122,1)",
+				"pointColor": "rgba(255,122,122,1)",
+				"pointStrokeColor": "#000",
+				"pointHighlightFill": "#fff",
+				"pointHighlightStroke": "rgba(255,122,122,1)",
+				"data": data1
+			},
+			{
+				"label": "Sourya",
+				"fillColor": "rgba(122,122,255,0.2)",
+				"strokeColor": "rgba(122,122,255,1)",
+				"pointColor": "rgba(122,122,255,1)",
+				"pointStrokeColor": "#000",
+				"pointHighlightFill": "#fff",
+				"pointHighlightStroke": "rgba(122,122,255,1)",
+				"data": data2
+			}
+		]
+	}
+
+	plotter.plot_and_save(data, chart_type="Radar", w=500, h=500)
+
+def generate_radar_data(param1,param2,labels):
+	genres = [item[0] for item in labels]
+	total = [item[1] for item in labels]
+	data1,data2,data3 = [],[],[]
+	for index,genre in enumerate(genres):
+		try: data1.append(round(param1[genre]/total[index],2))
+		except: data1.append(1)
+		try: data2.append(round(param2[genre]/total[index],2))
+		except: data2.append(1)	
+	generate_radar_chart(genres,data1,data2)
+
+# generate_radar_data(seena,seens,columns)
+# generate_radar_data(subs,pics,columns)
+# webbrowser.open('chart.html')
+
+def get_serial_rating(serial):
+	data0,data1,data2 = [],[],[]
+	query = 'select season,count(episode),ROUND(sum(rating)/count(episode),2) from t1 where serial = "'+serial+'" group by season'
+	cursor.execute(query)
+	result = cursor.fetchall()
+	for item in result:
+		data0.append(item[0])
+		data1.append(item[1])
+		data2.append(item[2])
+	generate_radar_chart(data0,data1,data2)
+	webbrowser.open('chart.html')
+
+# get_serial_rating('Sherlock')
+# generate_radar_chart(labels,data1,data2)
+# webbrowser.open('chart.html')
+
+# ADD RATINGS IN EPISODE PAGE
+# ADD STATISTICS PAGE => RUNTIME AND COUNT BASED ON GENRE/SEEN STATUS BASED ON GENRE/SUB AND PICS STATUS/SERIAL RATING STATUS/TOP RATED SERIAL
+# ADD FILTER BASED ON GENRE,RUNTIME 
 

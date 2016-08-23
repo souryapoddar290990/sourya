@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
-import cv2
+import cv2,imutils,time,datetime,pprint,numpy
 
 filename = 0
+print time.time()
 
 def get_face(f1,f2,filename):
     cascPath = 'C:\Users\DELL\Downloads\opencv\sources\data\haarcascades\haarcascade_frontalface_default.xml'
@@ -19,20 +20,27 @@ def get_face(f1,f2,filename):
 # camera = cv2.VideoCapture('C:/Users/DELL/Downloads/basic-motion-detection/videos/example_01.mp4')
 # camera = cv2.VideoCapture(0)
 # camera = cap = cv2.VideoCapture('output.avi')
-camera = cv2.VideoCapture('http://leafcamera.ddns.net:9000/videostream.cgi?loginuse=admin&loginpas=admin')
+camera = cv2.VideoCapture('http://192.168.0.205/videostream.cgi?loginuse=admin&loginpas=admin')
 # camera = cv2.VideoCapture('TheBigBangTheory.mkv')
-t,l,w,h,motion_array,time_array,firstFrame,count,presence,absence,bufferframes,frame_rate,motion,video_num,video_new = 0,0,640,35,[],[],None,0,60,0,60,10,0,0,1
-# plt.ion()
+# camera = cv2.VideoCapture('http://54.169.83.191:1935/live/office.stream/playlist.m3u8')
 # fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-# out = cv2.VideoWriter('output_'+str(video_num)+'.avi',fourcc, frame_rate, (int(camera.get(3)),int(camera.get(4))))
+# out = cv2.VideoWriter('output_test.avi',fourcc, int(camera.get(5)), (int(camera.get(3)),int(camera.get(4))))
+t,l,w,h,motion_array,time_array,firstFrame,count,presence,absence,bufferframes,frame_rate,motion,video_num,video_new = 0,0,640,35,[],[],None,0,60,0,60,10,0,0,1
+plt.ion()
 # print int(camera.get(3)),int(camera.get(4))
 
 while True:
     try:
         count += 1
+        print count
         grabbed, frame = camera.read()
         frame_raw = frame.copy()
         if count < bufferframes: continue
+            # if firstFrame == None:
+                # firstFrame = numpy.float32(frame)
+            # else:
+                # cv2.accumulateWeighted(frame,firstFrame,0.1)
+            # cv2.imshow('AVG',firstFrame)
         text = "Unoccupied"
         if not grabbed: break
 
@@ -40,20 +48,21 @@ while True:
         # frame[t:t+h, l:l+w] = [0,0,255]
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (21, 21), 0)
-        if firstFrame is None:
-            firstFrame = gray
-            continue
+        # if firstFrame is None:
+            # firstFrame = gray
+            # continue
         frameDelta = cv2.absdiff(firstFrame, gray)
         frameDelta[t:t+h, l:l+w] = [0]
         thresh = cv2.threshold(frameDelta, 100, 255, cv2.THRESH_BINARY)[1]
         thresh = cv2.dilate(thresh, None, iterations=2)
         cnts = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)[1]
         if count%frame_rate == 0:
-            plt.scatter(count,motion)
-            plt.draw()
+            # plt.scatter(count,motion)
+            # plt.draw()
             motion = 0
         for c in cnts:
-            if cv2.contourArea(c) < 1000: continue
+            print cv2.contourArea(c)
+            if cv2.contourArea(c) < 500: continue
             (x, y, w, h) = cv2.boundingRect(c)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             center = (x+w/2,y+h/2)
@@ -61,7 +70,7 @@ while True:
             motion += 1
 
         if text == "Occupied":
-            # print "MOTION"
+            print "MOTION"
             # filename = get_face(gray, frame_raw, filename)
             # if video_new == 1:
                 # out = cv2.VideoWriter('output_'+str(video_num)+'.avi',fourcc, 20, (int(camera.get(3)),int(camera.get(4))))
@@ -69,6 +78,7 @@ while True:
             # out.write(frame)
             presence -= 1
         if text == "Unoccupied":
+            print ""
             presence = 60
         motion_array.append(motion)
         time_array.append(count)
@@ -95,10 +105,11 @@ while True:
 
 camera.release()
 cv2.destroyAllWindows()
-print motion_array
-print time_array
+# print motion_array
+# print time_array
 # fig = plt.figure()
 # plt.plot(time_array,motion_array)
 # plt.show()
+print time.time()
 
 
