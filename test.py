@@ -314,7 +314,7 @@ def get_tv_statistics():
 			columns.append([item[0],item[1]])
 	return columns
 
-# columns = get_tv_statistics()
+columns = get_tv_statistics()
 
 def get_tv_seen_statistics(key,value):
 	query = 'select t2.genre,sum(t2.runtime) from t1 inner join t2 where (t1.serial=t2.serial and t1.'+key+' != "'+value+'") group by t2.genre'
@@ -347,7 +347,7 @@ def generate_donut_chart(columns,title):
 	}
 	plotter.plot_and_save(chart)
 
-# generate_chart(columns,"Show Type Statistics")
+generate_donut_chart(columns,"Show Type Statistics")
 
 def generate_radar_chart(labels,data1,data2):
 	plotter = ChartsJSPlotter()
@@ -414,4 +414,3 @@ def get_serial_rating(serial):
 # ADD RATINGS IN EPISODE PAGE
 # ADD STATISTICS PAGE => RUNTIME AND COUNT BASED ON GENRE/SEEN STATUS BASED ON GENRE/SUB AND PICS STATUS/SERIAL RATING STATUS/TOP RATED SERIAL
 # ADD FILTER BASED ON GENRE,RUNTIME 
-
