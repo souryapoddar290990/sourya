@@ -9,22 +9,24 @@ master_username = "aryasourya"
 master_password = "123456"
 
 # db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6109617",passwd="VCDwEsfbel",db="sql6109617")
+# db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
 db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
 # query = "SELECT * FROM information_schema.tables"
 # query = "update t1 set pics='Y' where serial='Coupling'"
 # query = "select serial,count(*) from t1 where pics='N' group by serial"
 # query = "select season,serial,name,sub from t1 where serial like '%elementary%'"
-# query = "SELECT * FROM sql6109617.t2"
+# query = "SELECT * FROM sql6134729.t2"
 # cursor.execute(query)
 # data = cursor.fetchall()
-# print len(data)
+# for item in data:
+#     print item
 
 def insert_t2_data():
     db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+    # db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
     cursor = db.cursor()
-    # query = "CREATE TABLE 't2' ('serial VARCHAR(200) NULL DEFAULT NULL','time INT(2) UNSIGNED ZEROFILL NULL DEFAULT NULL','status VARCHAR(15) NULL DEFAULT NULL','genre VARCHAR(15) NULL DEFAULT NULL','network VARCHAR(40) NULL DEFAULT NULL','theme VARCHAR(2000) NULL DEFAULT NULL','runtime FLOAT NULL DEFAULT NULL')"
-    # query = 'INSERT INTO `t2` (`serial`, `time`, `status`, `genre`, `network`, `theme`, `runtime`) VALUES ("24", 60, "Ended", "Thriller", "FOX", "It is a thriller presented in \'real time\' with each minute of airtime that corresponds to a minute in the lives of the characters. \'24\' employs fast-paced and complex stories, and often contains unexpected plot twists. Though each day\'s events typically involve investigation of leads on terrorists, tracking suspects, and averting attacks, each season is made up of various interwoven story threads. The exact objective of the day evolves over the course of the season as the antagonists adapt, contingencies arise, and larger scale operations unfold.", 41)'
+    # query = "CREATE TABLE 't2' ('serial' VARCHAR(200) NULL DEFAULT NULL,'time' INT(2) UNSIGNED ZEROFILL NULL DEFAULT NULL,'status' VARCHAR(15) NULL DEFAULT NULL,'genre' VARCHAR(15) NULL DEFAULT NULL,'network' VARCHAR(40) NULL DEFAULT NULL,'theme' VARCHAR(2000) NULL DEFAULT NULL,'runtime' FLOAT NULL DEFAULT NULL,'tvdb_id' INT(10) NULL DEFAULT NULL)"
     # query = "TRUNCATE TABLE t2"
     query = "select * from t2 order by serial"
     cursor.execute(query)
@@ -35,11 +37,13 @@ def insert_t2_data():
         prefix = "INSERT INTO `t2` (`serial`, `time`, `status`, `genre`, `network`, `theme`, `runtime`) VALUES ("
         query = prefix+output+")"
         query = query.replace("'","\'")
-        # print query
-        db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6109617",passwd="VCDwEsfbel",db="sql6109617")
+        print query
+        db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
         cursor = db.cursor()
         cursor.execute(query)
         db.commit()
+
+# insert_t2_data()
 
 def insert_t1_data():
     db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
@@ -50,7 +54,7 @@ def insert_t1_data():
     query = "select * from t1 order by serial,season,episode"
     cursor.execute(query)
     data = cursor.fetchall()
-    db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6109617",passwd="VCDwEsfbel",db="sql6109617")
+    db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
     cursor = db.cursor()
     for item in data:
         try:
@@ -63,6 +67,8 @@ def insert_t1_data():
             cursor.execute(query)
             db.commit()
         except Exception,e : print e,item
+
+# insert_t1_data()
 
 @route('/<filename:re:.*\.js>')
 def stylesheets(filename):

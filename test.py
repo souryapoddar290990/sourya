@@ -3,17 +3,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 import smtplib
-import pyscreenshot as ImageGrab
+# import pyscreenshot as ImageGrab
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEBase import MIMEBase
 from email import encoders
-from PIL import Image
+from PIL import Image,ImageGrab
 from collections import Counter
 from iplotter import C3Plotter,ChartsJSPlotter
 
 db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
+# query = "select season,episode,summary from t1 where serial = 'How Its Made'"
+# cursor.execute(query)
+# data = cursor.fetchall()
+# for item in data:
+# 	text = item[2].replace("This episode demonstrates the production processes for ","").replace(", ","/").replace(" and ","/").replace(".","")
+# 	print str(item[0])+"."+str(item[1])+"/"+text
+
 # foldername = "G:/ARYA SOURYA/TELEVISION/"
 
 def get_immediate_subfolders(folder_name):
@@ -270,36 +277,45 @@ def check_db_filename_summary():
 # for item in data:
 # 	print get_video_audio_details(item)[0],float(get_video_audio_details(item)[1]),item
 
+def take_screenshot(filename,fname):
+	webbrowser.open(filename+'.html')
+	time.sleep(1)
+	im=ImageGrab.grab(bbox=(433,272,933,552))
+	im.save(fname+'.png')
+
+# take_screenshot('1-1')
+
 def generate_him_images():
-	query = 'select season,episode,name,summary from t1 where serial="How Its Made" and season=26'
+	query = 'select season,episode,name,summary from t1 where serial="How Its Made" and season=19'
 	cursor.execute(query)
 	data = cursor.fetchall()
+	maxm,epi,sea = 0,0,0
 	for item in data:
 		filename = str(item[0])+"-"+str(item[1])
+		if int(item[1]) < 10: fname = str(item[0])+"/"+"0"+str(item[1])
+		else: fname = str(item[0])+"/"+str(item[1])
 		f = open(filename+".html","w")
 		msg = ''
 		summary = item[3]
 		summary = summary.replace("This episode demonstrates the production processes for ","").replace(" and",",").replace(".","").split(", ")
 		# print item[0],item[1],item[2],len(summary)
-		if len(summary) == 4:
-			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:150px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
-			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr><tr><td id="a">'+summary[3]+'</td></tr>'
-			msg += '</table></body></html>'
-		else:
-			msg += '<html><head><style>td#a{font-family:arial;width:1280px;height:200px;font-size:40px;text-align:center;}</style><body><table style="border-collapse:collapse;">'
-			msg += '<tr><td id="a">'+summary[0]+'</td></tr><tr><td id="a">'+summary[1]+'</td></tr><tr><td id="a">'+summary[2]+'</td></tr>'
-			msg += '</table></body></html>'
+		if len(summary) == 4: a,b,c,d = summary[0],summary[1],summary[2],summary[3]
+		else: a,b,c,d = summary[0],summary[1],summary[2],""
+		# print len(a),len(b),len(c),len(d)
+		# if len(a)>maxm: maxm,epi,sea = len(a),item[1],item[0]
+		# if len(b)>maxm: maxm,epi,sea = len(b),item[1],item[0]
+		# if len(c)>maxm: maxm,epi,sea = len(c),item[1],item[0]
+		# if len(d)>maxm: maxm,epi,sea = len(d),item[1],item[0]
+		# print maxm,sea,epi
+		msg += '<html><head><style>body { background-image: url("him_sample_black.png");background-color:red;background-repeat: no-repeat;background-attachment: fixed;background-position: center; } td#a{font-family:Segoe ui light;width:496px;height:70px;font-size:35px;text-align:center;color:white;}</style><body><table style="border-collapse:collapse;margin-top:186px;margin-left:425px;">'
+		msg += '<tr><td id="a">'+a+'</td></tr><tr><td id="a">'+b+'</td></tr><tr><td id="a">'+c+'</td></tr><tr><td id="a">'+d+'</td></tr>'
+		msg += '</table></body></html>'
+
 		f.write(msg)
 		f.close()
+		take_screenshot(filename,fname)
 
-# generate_him_images()
-
-def take_screenshot(filename):
-	webbrowser.open(filename+'.html')
-	im=ImageGrab.grab(bbox=(10,10,500,500))
-	im.show()
-
-# take_screenshot('26-13')
+generate_him_images()
 
 def get_tv_statistics():
 	query = 'select t2.genre,sum(t2.runtime) from t1 inner join t2 where t1.serial=t2.serial group by t2.genre'
@@ -314,7 +330,7 @@ def get_tv_statistics():
 			columns.append([item[0],item[1]])
 	return columns
 
-columns = get_tv_statistics()
+# columns = get_tv_statistics()
 
 def get_tv_seen_statistics(key,value):
 	query = 'select t2.genre,sum(t2.runtime) from t1 inner join t2 where (t1.serial=t2.serial and t1.'+key+' != "'+value+'") group by t2.genre'
@@ -347,7 +363,7 @@ def generate_donut_chart(columns,title):
 	}
 	plotter.plot_and_save(chart)
 
-generate_donut_chart(columns,"Show Type Statistics")
+# generate_donut_chart(columns,"Show Type Statistics")
 
 def generate_radar_chart(labels,data1,data2):
 	plotter = ChartsJSPlotter()
@@ -414,3 +430,4 @@ def get_serial_rating(serial):
 # ADD RATINGS IN EPISODE PAGE
 # ADD STATISTICS PAGE => RUNTIME AND COUNT BASED ON GENRE/SEEN STATUS BASED ON GENRE/SUB AND PICS STATUS/SERIAL RATING STATUS/TOP RATED SERIAL
 # ADD FILTER BASED ON GENRE,RUNTIME 
+
