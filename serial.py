@@ -78,7 +78,7 @@ def episodes_view(serial,url_temp,series_id):
 			text3 = BeautifulSoup(requests.get(absolute_link_to_episodes).text)
 			summary = text3.select("#datatable tr")[7].findAll('td')[1].findAll('textarea', {'name':'Overview_7'})[0].text.strip()
 			# print season,episode,name,date_new,summary
-			print 'insert into t1 values ("'+serial.title()+'","'+name.title()+'",'+str(season)+','+str(episode)+',"No","No","No",'+str(date[2])+','+str(date[1])+','+str(date[0])+',"'+summary+'","N","N");'
+			print 'insert into t1 values ("'+serial.title()+'","'+name.title()+'",'+str(season)+','+str(episode)+',"No","No","No",'+str(date[2])+','+str(date[1])+','+str(date[0])+',"'+summary+'","N","N",0);'
 		except: pass
 
 def main_funct():
@@ -99,7 +99,7 @@ def main_funct():
 		if flag2 == 3: flag0, flag1, flag2 = 0, 0, 0	
 		if flag2 == 4: return 0
 
-# main_funct()
+main_funct()
 
 def episodes_view_future():
 	info = raw_input('Please enter details: ').split(",")

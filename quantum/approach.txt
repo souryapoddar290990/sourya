@@ -1,0 +1,22 @@
+Approach:
+
+FRAMEWORK : MySQL is used as backend while Python is used as the wrapper, just to handle reading input file and displaying results in a presentable way. All computations are done using MySQL query. MySQL queries are called through Python package 'MySQLdb'.
+
+STEP 1 : CREATE MYSQL DATABASE CONNECTION
+create_db_connection() function creates the database connection
+
+STEP 2 : PARSE DATA AND LOAD DATA INTO DATABASE TABLE
+create_table() function creates a table 'post_box' having fields
+'post_id' as primary key of type int and not null
+'name' of type varchar
+'loc_x' of type float
+'loc_y' of type float
+
+insert_rows() function reads the POBoxes.txt file, extract all elements from 'items' and insert 'id', 'name', 'loc_x', 'loc_y' in fields 'post_id', 'name', 'loc_x', 'loc_y' of table 'post_box' respectively.
+
+STEP 3 : SOLVING THE PROBLEMS
+PROBLEM 1 : solve_1() function does a self-join of table 'post_box' based on 'pid', excluding same pid cases. It then compute distance between two postboxes in the joined-table by converting latitude and longitude difference into distance measured in Km and filters out the tuples having distance greater than 500m using where operation. It does a group by operation to get the list of all 1st postbox having atleast one postbox within 500m distance. Now it takes the complement set of these postboxes from the main table using not in operation to get list of all postboxes that don't have any other postbox in 500m proximity.
+
+PROBLEM 2 : solve_2() function does a self-join of table 'post_box' based on 'pid', excluding same pid cases. It then compute the latitude and longitude of the bounding rectangle having a maximum distance of 1Km around 1st postbox in the joined-table and filters out the tuples whose 2nd postbox is not lying within that bounding rectangle. It does a group by operation to get the list of all 1st postboxes and their corresponding counts which represents number of postboxes present within its bounding rectangle. Now we get the postbox having maximum count and report the latitude and longitude of its bounding box as the are having maximum postboxes
+
+PROBLEM 3 : solve_3() function does a substing_index operation on the field 'name' to get the first word from all the postbox names and then use group by operation to get the frequency count of all those words. The word having maximum count is the solution of this problem

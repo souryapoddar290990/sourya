@@ -14,14 +14,46 @@ from iplotter import C3Plotter,ChartsJSPlotter
 
 db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
-# query = "select season,episode,summary from t1 where serial = 'How Its Made'"
-# cursor.execute(query)
-# data = cursor.fetchall()
+
+def convert_t1_json():
+	json_table1 = {}
+	query = "select serial,MAX(season) from t1 group by serial"
+	cursor.execute(query)
+	data = cursor.fetchall()
+	for it in data:
+		season = {}
+		for it1 in range(it[1]):
+			season[str(it1+1)] = {}
+		json_table1[str(it[0])] = season
+
+	query = "select * from t1"
+	cursor.execute(query)
+	data = cursor.fetchall()
+	for it in data:
+		try:
+			json_table1[str(it[0])][str(it[2])][str(it[3])] = {'name':it[1],'seena':it[4],'seens':it[5],'sub':it[6],'day':int(it[7]),'month':int(it[8]),'year':int(it[9]),'summary':it[10],'pics':it[11],'ppt':it[12],'rating':it[13]}
+		except:
+			pass
+	return json_table1
+
+# pprint.pprint(convert_t1_json())
+		
+def convert_t2_json():
+	json_table2 = {}
+	query = "select * from t2"
+	cursor.execute(query)
+	data = cursor.fetchall()
+	for it in data:
+		json_table2[it[0]] = {'time':int(it[1]),'status':it[2],'genre':it[3],'network':it[4],'theme':it[5],'runtime':int(it[6]),'tvdb_id':int(it[7])}
+	return json_table2
+
+# maxm,sea,epi,ser,name = 0,0,0,0,""
 # for item in data:
+	# if len(item[3]) > maxm: maxm,sea,epi,ser,name = len(item[3]),item[1],item[2],item[0],item[3]
 # 	text = item[2].replace("This episode demonstrates the production processes for ","").replace(", ","/").replace(" and ","/").replace(".","")
 # 	print str(item[0])+"."+str(item[1])+"/"+text
-
-# foldername = "G:/ARYA SOURYA/TELEVISION/"
+# print maxm,sea,epi,ser,name
+foldername = "H:/ARYA SOURYA/TELEVISION/"
 
 def get_immediate_subfolders(folder_name):
 	paths = glob.glob(folder_name+'/*')
@@ -229,7 +261,7 @@ def health_report(foldername,cursor):
 		print serial,"DURATION",str(sum(duration,datetime.timedelta())),"COUNT",str(number)
 		print "#####################################################################################"
 
-# health_report(foldername,cursor)
+health_report(foldername,cursor)
 
 def check_image_size(filename):
 	im = Image.open(filename)
@@ -315,7 +347,7 @@ def generate_him_images():
 		f.close()
 		take_screenshot(filename,fname)
 
-generate_him_images()
+# generate_him_images()
 
 def get_tv_statistics():
 	query = 'select t2.genre,sum(t2.runtime) from t1 inner join t2 where t1.serial=t2.serial group by t2.genre'
@@ -431,3 +463,50 @@ def get_serial_rating(serial):
 # ADD STATISTICS PAGE => RUNTIME AND COUNT BASED ON GENRE/SEEN STATUS BASED ON GENRE/SUB AND PICS STATUS/SERIAL RATING STATUS/TOP RATED SERIAL
 # ADD FILTER BASED ON GENRE,RUNTIME 
 
+# paths = "C:/Users/DELL/Downloads/vidf_ucsd/ped1/train"
+# for path, subdirs, files in os.walk(paths):
+# 	for filename in files:
+# 		try:
+# 			f = os.path.join(path, filename)
+# 			print path.replace(paths,"").replace("\\","")+"/"+filename
+# 		except: print "ERROR",filename
+
+
+def compress_image(filename,output,reduction):
+	# print filename
+	im = Image.open(filename)
+	width, height = im.size
+	sp = im.resize((int(width*reduction),int(height*reduction)), Image.ANTIALIAS)
+	sp.save(output)
+
+# paths = "C:/Users/DELL/AndroidStudioProjects/tvtest3/app/src/main/res/mipmap-hdpi/"
+# for path, subdirs, files in os.walk(paths):
+# 	for filename in files:
+# 		f = os.path.join(path, filename)
+# 		target_name = filename.split("/")[10]
+# 		compress_image(path+filename,target_name,0.5)
+
+# paths = "D:/tc/static/img/How Its Made"
+# count = 0
+# for path, subdirs, files in os.walk(paths):
+# 	for filename in files:
+# 		f = os.path.join(path, filename)
+# 		if f.endswith(".png"): 
+# 			temp1 = path.replace("D:/tc/static/img/","").split("\\")
+# 			temp2 = filename.split(".")
+# 			output = "pic_him"+"_"+temp1[1]+"_"+str(int(temp2[0]))+"."+temp2[1]
+# 			# print path+"/"+filename
+# 			compress_image(path+"/"+filename,output,1)
+# 			count += 1
+# print count
+
+# import cv2,scipy
+# import matplotlib.image as img
+# out = cv2.VideoWriter("test.mkv", cv2.VideoWriter_fourcc(*'MJPG'), 15, (240,160))
+# for path, subdirs, files in os.walk("t001"):
+# 	for filename in files:
+# 		temp = "t001/"+filename
+# 		camera = cv2.VideoCapture(temp)
+# 		grab,frame = camera.read()
+# 		out.write(frame)
+# out.release()

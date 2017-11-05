@@ -1,2 +1,2 @@
-start chrome "http://localhost:8080/show"
+start chrome "http://localhost:8040/show"
 python "tv series.py"

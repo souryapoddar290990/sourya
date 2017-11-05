@@ -1,5 +1,6 @@
-import os,sys,urllib2,json,pprint,omdb,requests,time,datetime,MySQLdb
+import os,sys,urllib2,json,pprint,requests,time,datetime,MySQLdb,subprocess
 import numpy as np
+import pandas as pd
 import datetime as dt
 from subprocess import call
 from bottle import route, run, template, request, redirect, static_file
@@ -8,67 +9,85 @@ month_name = {0:"", 1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:
 master_username = "aryasourya"
 master_password = "123456"
 
-# db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6109617",passwd="VCDwEsfbel",db="sql6109617")
-# db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
+
 db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
 cursor = db.cursor()
-# query = "SELECT * FROM information_schema.tables"
-# query = "update t1 set pics='Y' where serial='Coupling'"
+#query = "SELECT serial,count(*) FROM t1 where pics = 'N' group by serial"
+# query = "update t1 set name='Marvels Agents Of SHIELD' where serial='Marvels Agents Of SHIELD'"
 # query = "select serial,count(*) from t1 where pics='N' group by serial"
-# query = "select season,serial,name,sub from t1 where serial like '%elementary%'"
-# query = "SELECT * FROM sql6134729.t2"
+# query = "TRUNCATE TABLE t1"
+# query = "SELECT * FROM t1 where serial = 'Marvels Agents Of SHIELD'"
 # cursor.execute(query)
+# db.commit()
 # data = cursor.fetchall()
 # for item in data:
 #     print item
 
-def insert_t2_data():
+@route('/play/<name>/<season>/<episode>/<epi_name>')
+def play_video(name,season,episode,epi_name):
+    if int(episode) < 10: episode_nums = '0'+episode
+    else: episode_nums = episode
+    filename = '"G:\ARYA SOURYA/TELEVISION/'+name+'/SEASON '+str(season)+'/'+episode_nums+' - '+epi_name+'.mkv"'
+    subprocess.Popen("taskkill /IM vlc.exe")
+    subprocess.Popen('C:/Program Files/VideoLAN/VLC/vlc.exe '+filename)
+    return redirect('/season/'+name+'/'+str(season)+'/'+str(episode))
+
+def insert_t1_csv():
+    data = pd.read_csv('t1.csv')
     db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
-    # db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
     cursor = db.cursor()
-    # query = "CREATE TABLE 't2' ('serial' VARCHAR(200) NULL DEFAULT NULL,'time' INT(2) UNSIGNED ZEROFILL NULL DEFAULT NULL,'status' VARCHAR(15) NULL DEFAULT NULL,'genre' VARCHAR(15) NULL DEFAULT NULL,'network' VARCHAR(40) NULL DEFAULT NULL,'theme' VARCHAR(2000) NULL DEFAULT NULL,'runtime' FLOAT NULL DEFAULT NULL,'tvdb_id' INT(10) NULL DEFAULT NULL)"
-    # query = "TRUNCATE TABLE t2"
-    query = "select * from t2 order by serial"
-    cursor.execute(query)
-    data = cursor.fetchall()
-    for item in data:
-        summary = item[5].replace('"',"'")
-        output = '"'+item[0]+'",'+str(item[1])+',"'+item[2]+'","'+item[3]+'","'+item[4]+'","'+summary+'",'+str(int(item[6]))
-        prefix = "INSERT INTO `t2` (`serial`, `time`, `status`, `genre`, `network`, `theme`, `runtime`) VALUES ("
-        query = prefix+output+")"
+    for index, item in data.iterrows():
+        try: output = '"'+item[0]+'","'+item[1]+'",'+str(item[2])+','+str(item[3])+',"'+item[4]+'","'+item[5]+'","'+item[6]+'",'+str(item[7])+','+str(item[8])+','+str(item[9])+',"'+item[10]+'","'+item[11]+'","'+item[12]+'","'+str(item[13])
+        except:
+            if type(item[6]) == float: item[6] = "NA"
+            if type(item[10]) == float: item[10] = ""
+            output = '"'+item[0]+'","'+item[1]+'",'+str(item[2])+','+str(item[3])+',"'+item[4]+'","'+item[5]+'","'+item[6]+'",'+str(item[7])+','+str(item[8])+','+str(item[9])+',"'+item[10]+'","'+item[11]+'","'+item[12]+'","'+str(item[13])
+        prefix = "INSERT INTO t1 VALUES ("
+        query = prefix+output+'")'
         query = query.replace("'","\'")
-        print query
-        db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
-        cursor = db.cursor()
-        cursor.execute(query)
-        db.commit()
-
-# insert_t2_data()
-
-def insert_t1_data():
-    db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
-    cursor = db.cursor()
-    # query = "CREATE TABLE `t1` (`serial` VARCHAR(200) NOT NULL DEFAULT '',`name` VARCHAR(200) NULL DEFAULT NULL,`season` INT(5) NOT NULL DEFAULT '0',`episode` INT(5) NOT NULL DEFAULT '0',`seena` ENUM('Yes','No') NULL DEFAULT NULL,`seens` ENUM('Yes','No') NULL DEFAULT NULL,`sub` ENUM('Yes','No','NA') NULL DEFAULT NULL,`day` INT(11) NULL DEFAULT NULL,`month` INT(15) NULL DEFAULT NULL,`year` INT(11) NULL DEFAULT NULL,`summary` VARCHAR(4000) NULL DEFAULT NULL,`pics` ENUM('Y','N') NULL DEFAULT NULL,`ppt` ENUM('Y','N') NULL DEFAULT NULL,PRIMARY KEY (`serial`, `season`, `episode`))COLLATE='latin1_swedish_ci'ENGINE=InnoDB"
-    # query = "INSERT INTO `t1` ()"
-    # query = "TRUNCATE TABLE t1"
-    query = "select * from t1 order by serial,season,episode"
-    cursor.execute(query)
-    data = cursor.fetchall()
-    db=MySQLdb.connect(host="sql6.freemysqlhosting.net",port=3306,user="sql6134729",passwd="ZnNzaYwMqp",db="sql6134729")
-    cursor = db.cursor()
-    for item in data:
+        print '"'+item[0]+'","'+item[1]+'",'+str(item[2])+','+str(item[3])
         try:
-            summary = item[10].replace('"',"'")
-            output = '"'+item[0]+'","'+item[1]+'",'+str(item[2])+','+str(item[3])+',"'+item[4]+'","'+item[5]+'","'+item[6]+'",'+str(item[7])+','+str(item[8])+','+str(item[9])+',"'+item[10]+'","'+item[11]+'","'+item[12]
-            prefix = "INSERT INTO `t1` (`serial`, `name`, `season`, `episode`, `seena`, `seens`, `sub`, `day`, `month`, `year`, `summary`, `pics`, `ppt`) VALUES ("
-            query = prefix+output+'")'
-            query = query.replace("'","\'")
-            print item[0]
             cursor.execute(query)
             db.commit()
-        except Exception,e : print e,item
+        except Exception,e: print e
 
-# insert_t1_data()
+def insert_t2_csv():
+    data = pd.read_csv('t2.csv')
+    db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+    cursor = db.cursor()
+    for index, item in data.iterrows():
+        if type(item[5]) == float: item[5] = ''
+        try: output = '"'+item[0]+'",'+str(item[1])+',"'+item[2]+'","'+item[3]+'","'+item[4]+'","'+item[5]+'",'+str(int(item[6]))+','+str(item[7])
+        except: output = '"'+item[0]+'",'+str(item[1])+',"'+item[2]+'","'+item[3]+'","'+item[4]+'","'+item[5]+'",'+str(int(item[6]))+','+str(item[7])
+        prefix = "INSERT INTO t2 VALUES ("
+        query = prefix+output+')'
+        query = query.replace("'","\'")
+        try:
+            cursor.execute(query)
+            db.commit()
+        except Exception,e: print e
+
+# insert_t2_csv()
+
+def create_t2_table():
+    db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+    cursor = db.cursor()
+    query = "CREATE TABLE 't2' ('serial' VARCHAR(200) NULL DEFAULT NULL,'time' INT(2) UNSIGNED ZEROFILL NULL DEFAULT NULL,'status' VARCHAR(15) NULL DEFAULT NULL,'genre' VARCHAR(15) NULL DEFAULT NULL,'network' VARCHAR(40) NULL DEFAULT NULL,'theme' VARCHAR(2000) NULL DEFAULT NULL,'runtime' FLOAT NULL DEFAULT NULL,'tvdb_id' INT(10) NULL DEFAULT NULL)"
+    # query = "TRUNCATE TABLE t2"
+    cursor.execute(query)
+    data = cursor.fetchall()
+    db.commit()
+
+insert_t2_data()
+
+def create_t2_table():
+    db=MySQLdb.connect(host="localhost",port=3306,user="root",passwd="290990",db="tv")
+    cursor = db.cursor()
+    query = "CREATE TABLE 't1' ('serial' VARCHAR(200) NOT NULL DEFAULT '','name' VARCHAR(200) NULL DEFAULT NULL,'season' INT(5) NOT NULL DEFAULT '0','episode' INT(5) NOT NULL DEFAULT '0','seena' ENUM('Yes','No') NULL DEFAULT NULL,'seens' ENUM('Yes','No') NULL DEFAULT NULL,'sub' ENUM('Yes','No','NA') NULL DEFAULT NULL,'day' INT(11) NULL DEFAULT NULL,'month' INT(15) NULL DEFAULT NULL,'year' INT(11) NULL DEFAULT NULL,'summary' VARCHAR(4000) NULL DEFAULT NULL,'pics' ENUM('Y','N') NULL DEFAULT NULL,'ppt' ENUM('Y','N') NULL DEFAULT NULL,'rating' FLOAT NULL DEFAULT NULL,PRIMARY KEY ('serial', 'season', 'episode'))COLLATE='latin1_swedish_ci'ENGINE=InnoDB"
+    # query = "TRUNCATE TABLE t1"
+    cursor.execute(query)
+    data = cursor.fetchall()
+    db.commit()
 
 @route('/<filename:re:.*\.js>')
 def stylesheets(filename):
@@ -230,8 +249,11 @@ def season(name,season,episode):
     if int(episode)<10: episode_nums = "0"+str(episode)
     else: episode_nums = str(episode)
 
+    
     msg += '<div id="content"><table id="etab"><tr><td colspan="3" id="td1">'+epi_name+'</td></tr>'
-    msg += '<tr><td rowspan="6" id="td10"><a href="../../../'+name+'/'+str(season)+'/'+episode_nums+' - '+epi_name+' - Shortcut.lnk" download><img src="../../../'+name+'/'+str(season)+'/'+str(episode_nums)+'.png"><span id="download">Click to download</span></a></td>'
+    msg += '<tr><td rowspan="6" id="td10"><a href="../../../play/'+name+'/'+str(season)+'/'+str(episode)+'/'+epi_name+'"><img src="../../../'+name+'/'+str(season)+'/'+str(episode_nums)+'.png"><span id="download">Click To Play</span></a></td>'
+    # msg += '<tr><td rowspan="6" id="td10"><a href="../../../'+name+'/'+str(season)+'/'+episode_nums+' - '+epi_name+' - Shortcut.lnk" download><img src="../../../'+name+'/'+str(season)+'/'+str(episode_nums)+'.png"><span id="download">Click to download</span></a></td>'
+
     msg += '<td id="td2">Aired On:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td id="td3" colspan="2">'+str(epi_day)+' '+month+' '+str(year)+'</td></tr><tr><td id="td2">Season:</td><td id="td3">'+str(season)+'</td></tr><tr><td id="td2">Episode:</td><td id="td3">'+str(episode)+'</td></tr>'
     msg += '<tr><td id="td2">Arya:</td><td id="td3">'+epi_seena+'</td><td><a href="../../../bypass/'+name+'/'+str(season)+'/'+str(episode)+'/seena/'+epi_seena+'"><img src="../../../'+epi_seena.lower()+'.png"></a></td></tr>'
     msg += '<tr><td id="td2">Sourya:</td><td id="td3">'+epi_seens+'</td><td><a href="../../../bypass/'+name+'/'+str(season)+'/'+str(episode)+'/seens/'+epi_seens+'"><img src="../../../'+epi_seens.lower()+'.png"></a></td></tr>'    
@@ -359,7 +381,7 @@ def get_task_details():
     db.commit()
     return redirect('/tasks')
 
-run(host='localhost', port=8080)
+#run(host='localhost', port=8040)
 
 def null_input(var):
    if var == "":

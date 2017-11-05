@@ -18,9 +18,9 @@ def get_face(f1,f2,filename):
     return filename
 
 # camera = cv2.VideoCapture('C:/Users/DELL/Downloads/basic-motion-detection/videos/example_01.mp4')
-# camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(0)
 # camera = cap = cv2.VideoCapture('output.avi')
-camera = cv2.VideoCapture('http://192.168.0.205/videostream.cgi?loginuse=admin&loginpas=admin')
+# camera = cv2.VideoCapture('http://192.168.0.205/videostream.cgi?loginuse=admin&loginpas=admin')
 # camera = cv2.VideoCapture('TheBigBangTheory.mkv')
 # camera = cv2.VideoCapture('http://54.169.83.191:1935/live/office.stream/playlist.m3u8')
 # fourcc = cv2.VideoWriter_fourcc(*'MJPG')
@@ -90,7 +90,7 @@ while True:
         # cv2.putText(frame, datetime.datetime.now().strftime("%A %d %B %Y %I:%M:%S%p"),\(10, frame.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
         cv2.imshow("Security Feed", frame)
         # cv2.imshow("Thresh", thresh)
-        # cv2.imshow("Frame Delta", frameDelta)
+        cv2.imshow("Frame Delta", frameDelta)
         if cv2.waitKey(1) & 0xFF == ord("q"): break
         if presence <= 0:
             firstFrame = None

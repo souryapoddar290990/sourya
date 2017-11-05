@@ -21,6 +21,8 @@ class LeafCam():
         self.frame_number = []
         self.time_frame_buffer = 25
         self.cluster_distance = 200
+        self.dimension = 1200
+        self.time_interval = 5
 
     def set_cam_details(self,input_path):
         cam = cv2.VideoCapture(input_path)
@@ -101,6 +103,15 @@ class LeafCam():
             counter -= 1
         out.release()
 
+    def save_images(self,input_path):
+        camera = cv2.VideoCapture(input_path)
+        counter = 0
+        while True:
+            # print counter
+            frame = camera.read()[1]
+            if counter % (self.camera_frame_rate * self.time_interval) == 0: cv2.imwrite(str(frame)+'.jpg',frame)
+            counter += 1
+
     def view_video(self,input_path):
         cam = cv2.VideoCapture(input_path)
         while True:
@@ -113,7 +124,7 @@ class LeafCam():
     def analysis(self,input_path):
         # cam = cv2.VideoCapture(input_path)
         self.threshold_motion,self.contour_motion,self.max_area_motion,self.total_area_motion,self.frame_number = self.main(input_path)
-        fig = plt.figure()
+        # fig = plt.figure()
         # plt.subplot(4, 1, 1)
         # plt.ylim((0,1.2))
         # plt.plot(self.frame_number,self.threshold_motion)
@@ -124,10 +135,11 @@ class LeafCam():
         # plt.subplot(4, 1, 4)
         # plt.plot(self.frame_number,self.total_area_motion)
         # plt.show()
+        self.plot_chart1('plot1',0)
+        self.plot_chart2('plot2',0)
 
     def plot_chart1(self,file_name,display):
         data1,data2,data3,data4 = ['threshold_motion'],['contour_motion'],['max_area_motion'],['total_area_motion']
-
         for index in range(len(self.threshold_motion)):
             data1.append(self.threshold_motion[index])
             data2.append(self.contour_motion[index]>0)
@@ -196,7 +208,7 @@ class LeafCam():
         # print cluster_value
         return temp_holder
 
-    def save_video_clip(input_path,output_path,clip_number,start_frame,stop_frame):
+    def save_video_clip(self,input_path,output_path,clip_number,start_frame,stop_frame):
         camera = cv2.VideoCapture(input_path)
         out = cv2.VideoWriter(output_path+str(clip_number)+'.avi', self.fourcc, self.camera_frame_rate, (self.camera_width,self.camera_height))
         counter = 0
@@ -209,29 +221,29 @@ class LeafCam():
             counter += 1
         out.release()
 
-    def cluster_level1(output_path):
+    def cluster_level1(self,output_path):
         cluster_value = []
         for index in range(len(self.threshold_motion)):
             # cluster_value.append((threshold_motion[index]+(contour_motion[index]>0)+(max_area_motion[index]/1000>0)+(total_area_motion[index]/1000>0))>3)
-            cluster_value.append((threshold_motion[index]*(contour_motion[index]>0)*max((max_area_motion[index]/1000),(total_area_motion[index]/1000))>1))
+            cluster_value.append((self.threshold_motion[index]*(self.contour_motion[index]>0)*max((self.max_area_motion[index]/1000),(self.total_area_motion[index]/1000))>1))
 
         clustered_data = self.get_cluster(cluster_value)
 
         result = []
         for item in clustered_data:
-            start_frame,stop_frame = max(0,min(clustered_data[item])-self.time_frame_buffer),min(max(clustered_data[item])+self.time_frame_buffer,len(threshold_motion))
+            start_frame,stop_frame = max(0,min(clustered_data[item])-self.time_frame_buffer),min(max(clustered_data[item])+self.time_frame_buffer,len(self.threshold_motion))
             # start_frame,stop_frame = min(clustered_data[item]),max(clustered_data[item])
             # print start_frame,stop_frame
             result.append([start_frame,stop_frame])
             # self.save_video_clip(output_path,item,start_frame,stop_frame,camera_width,camera_height,camera_frame_rate,fourcc)
         return result
 
-    def cluster_level2(output_path):
+    def cluster_level2(self,input_path,output_path):
         cluster_data = self.cluster_level1(output_path)
-        all_outcome = range(dimension)
-        cluster_value = [0]*dimension
+        all_outcome = range(self.dimension)
+        cluster_value = [0]*self.dimension
         for item in cluster_data:
-            temp = [0]*dimension
+            temp = [0]*self.dimension
             for ind in range(item[0],item[1]): temp[ind] = 1
             cluster_value = [x|y for x,y in zip(cluster_value,temp)]
 
@@ -239,19 +251,27 @@ class LeafCam():
         for index,item in enumerate(clustered_data):
             start_frame,stop_frame = min(clustered_data[item]),max(clustered_data[item])
             # print start_frame,stop_frame
-            save_video_clip(output_path,index,start_frame,stop_frame,camera_width,camera_height,camera_frame_rate,fourcc)
+            # self.save_video_clip(input_path,output_path,index,start_frame,stop_frame)
 
-# if __name__ == '__main__':
-	# start = time.time()
-	# lc = LeafCam()
-	# lc.set_cam_details('http://192.168.0.205/videostream.cgi?loginuse=admin&loginpas=admin')
-	# end = time.time()
 
-cam = cv2.VideoCapture('video5\output_video_clip_1.avi')
-while True:
-	grabbed,frame = cam.read()
-	cv2.imshow('',frame)
-	if cv2.waitKey(50) & 0xFF == ord("q"):
-		cv2.imwrite('a.jpg',frame)
-		break
+if __name__ == '__main__':
+    start = time.time()
+    lc = LeafCam()
+    path = 'http://192.168.0.205/videostream.cgi?loginuse=admin&loginpas=admin'
+    path = 'output_test_0.avi'
+    lc.set_cam_details(path)
+    lc.save_images(path)
+    # lc.analysis(path)
+    # lc.main(path)
+    # lc.cluster_level2(path,'trial')
+    # end = time.time()
+    # print end_time-start_time
+
+# cam = cv2.VideoCapture('video5\output_video_clip_1.avi')
+# while True:
+# 	grabbed,frame = cam.read()
+# 	cv2.imshow('',frame)
+# 	if cv2.waitKey(50) & 0xFF == ord("q"):
+# 		cv2.imwrite('a.jpg',frame)
+# 		break
 
