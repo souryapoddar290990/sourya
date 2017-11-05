@@ -1,0 +1,1645 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "08df0dcc-b819-f489-bb83-a7909376cecd",
+			"name": "Prerak's Live Collection",
+			"description": "",
+			"order": [
+				"12a7e6a7-cae3-7efe-3cf5-523627f9599c",
+				"50d50bfd-6af3-69b6-4da0-37d550e1560a",
+				"eec736bc-2e79-1d0d-165f-9ed0238759b3",
+				"28fdfaeb-1e40-c488-aac2-a16d59d0a3c9",
+				"e455aa4f-3755-f28b-5565-c5f1558c265d",
+				"ba156ffe-06ac-f282-5464-50c0a1298759",
+				"aa65ff5e-9d44-7179-0342-9194067d1fc3",
+				"12055b58-54c5-63c7-60d4-ae8b1c5dcdfb",
+				"5b91f5c0-b36d-acd5-514a-ea0375d69d40",
+				"8ffd413e-2441-6be1-eaa7-9b6f6440be43",
+				"c4d6d56a-59ae-e5df-8fb0-0274ed60ffec",
+				"21f091a1-d41f-78fe-5f7b-4fbaaf62aa0f",
+				"51c1b208-1d20-7a51-b73a-216000db407b",
+				"b4cea783-46d6-7605-07a2-d74baf21afcd",
+				"3f80f9e7-6389-fdab-1fe3-71aba790293a",
+				"94fce3c7-4aee-321a-1dca-9bc8093eb5ed",
+				"a2cbf0f0-07e4-fe41-f0e7-c199ad9b670f",
+				"67a860f1-9b1b-f641-3b96-fb3bd8fcab79",
+				"8b0e7fe8-7558-f68b-6717-ab7b15db77db"
+			],
+			"folders": [],
+			"timestamp": 1450715216359,
+			"synced": false,
+			"remote_id": 0,
+			"owner": "236641",
+			"subscribed": false,
+			"remoteLink": "",
+			"public": false,
+			"createdAt": null,
+			"updatedAt": 1467186583302,
+			"write": true,
+			"published": false,
+			"favorite": false,
+			"permissions": {},
+			"syncedPermissions": {},
+			"requests": [
+				{
+					"id": "12055b58-54c5-63c7-60d4-ae8b1c5dcdfb",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/init?session_id=56602e4635fcb350187b4fda&init_type=basic_data&csrf_token=63546060e8b44fdd1d16b902240bb8c788c20688",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1452857474717,
+					"name": "INIT - DemoRoom",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "12a7e6a7-cae3-7efe-3cf5-523627f9599c",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/getInsights?session_id=57762991f1b0fb23127f26da&end_date=1467361624296&hub_id=563610b2dfa4d36b209236de&num_devices=3&csrf_token=5794e8c54621d75dafcb56c112b896c119139b79&start_date=1466756824296",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1467615331884,
+					"name": "getInsights - Vaibhav",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "21f091a1-d41f-78fe-5f7b-4fbaaf62aa0f",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/rooms/getbyid?session_id=56758092d3eaef834937fb5a&init_type=basic_data&csrf_token=74f64478903bb363fd33d63c5d63ffe0a7a5cac7&hub_id=563610b2dfa4d36b209236de&room_id=569d3073c6d10b4f2bae1d8f",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1467184155327,
+					"name": "ROOMS - getbyid",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "28fdfaeb-1e40-c488-aac2-a16d59d0a3c9",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/getInsights?session_id=5690dafb5744ebb03f01802a&init_type=basic_data&csrf_token=e64dd8bdff8560a51bed3b4209ae01cf2312d1f6&hub_id=5690d3cc5744ebb03f017f6c&end_date=1456165800000&start_date=1455388200000",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1456215482371,
+					"name": "getInsights - LucentSmartSolutions",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "3f80f9e7-6389-fdab-1fe3-71aba790293a",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://stage.leaf.co.in/app/api/devices/getbyroom?session_id=56f0e23ef1c2b4d55c7c28ae&room_id=569f960143f8e8754f2d3559&csrf_token=21398aaed57380d8e4278a03950b26e6179e77b9&hub_id=569f9601d80c36754fca827e",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": null,
+					"dataMode": "params",
+					"name": "getDevicesByRoom",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1458627386486,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "50d50bfd-6af3-69b6-4da0-37d550e1560a",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/getInsights?session_id=566bc282e6fd20c06fadbc08&init_type=basic_data&csrf_token=85b73bc425584567b2cf7721e7b0c972a5bcdae2&hub_id=566bc028e6fd20c06fadbbf6&end_date=1451413800000&start_date=1449772200000",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": [],
+					"dataMode": "params",
+					"name": "getInsights - DhruvsFriend - Jaideep",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1451543398784,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "51c1b208-1d20-7a51-b73a-216000db407b",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/hubs/updatebill",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "POST",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "5629f20acf0aad2b76b64c41",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "csrf_token",
+							"value": "d8625289331d5763a3168e96e1cdb0298c219398",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "session_id",
+							"value": "5629e3b7cf0aad2b76b64c2a",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "utility",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "phase",
+							"value": "3",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "billing_number_of_days",
+							"value": "30",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "load",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "residential",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "limit_flag",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "bill_limit",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "billing_cycle_date",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "BILL - updatebill",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1457013938865,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "5b91f5c0-b36d-acd5-514a-ea0375d69d40",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/init?csrf_token=f88aa6fcb7fac696f412225a854ac37b309d7ebc&session_id=57177a2dadeabc5e1d182044",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": [],
+					"dataMode": "params",
+					"name": "INIT - gowhar@hakims.com (Gujrat)",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1461160036096,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "67a860f1-9b1b-f641-3b96-fb3bd8fcab79",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/notifications/get?session_id=5714b627c1b46b6c27b692e1&csrf_token=7f44ef8027bf84e1858f50b5946336fef1461f33&hub_id=5714b47ec1b46b6c27b68a7e",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": null,
+					"dataMode": "params",
+					"name": "notifications",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1465552333355,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "8b0e7fe8-7558-f68b-6717-ab7b15db77db",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/config/hubs/getLocationSettings?session_id=576d4ddc095ec6d71924a5a5&csrf_token=2f6e60c2dd14d712118f2a0fee6508e15eb4ef83&hub_id=576d4a78095ec6d719248c2b",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": null,
+					"dataMode": "params",
+					"name": "BILL - getLocationSettings",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1467186583109,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "8ffd413e-2441-6be1-eaa7-9b6f6440be43",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/init?session_id=56758092d3eaef834937fb5a&init_type=basic_data&csrf_token=74f64478903bb363fd33d63c5d63ffe0a7a5cac7",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1452584133753,
+					"name": "INIT - Vaibhav",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "94fce3c7-4aee-321a-1dca-9bc8093eb5ed",
+					"headers": "X-API-VERSION: 1\nX-Leaf-Hub-Id: \"568cc9bad5bda39f0a700b4c\"\nX-Leaf-Room-Id: 9\n",
+					"url": "https://leaf.co.in/app/robin/diagnostic",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "POST",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": [
+						{
+							"key": "data",
+							"value": "123",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "X-Leaf-Hub-Id",
+							"value": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "Robin Diagnostic",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1458580698527,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "a2cbf0f0-07e4-fe41-f0e7-c199ad9b670f",
+					"headers": "",
+					"url": "https://leaf.co.in/app/users/phindex?email_id=shmarwadi@gmail.com&start_time=1463250600000&end_time=1463855400000",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1464090923613,
+					"name": "/users/phindex",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "aa65ff5e-9d44-7179-0342-9194067d1fc3",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/init?session_id=55dd956834dd7f6646fd65d6&init_type=basic_data&csrf_token=31854243fa36d01187572814fafc542314df6bba",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1463567520215,
+					"name": "INIT - DemoRoom",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "b4cea783-46d6-7605-07a2-d74baf21afcd",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/hubs/getbillsettings?session_id=56d8453f4e05b9485ad2f265&csrf_token=5b477e9598b7b6ec2f0432f1b5cc7663d281901f&hub_id=568cc9bad5bda39f0a700b4c",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": [],
+					"dataMode": "params",
+					"name": "BILL - getbillsettings",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1457014266120,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "ba156ffe-06ac-f282-5464-50c0a1298759",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/getInsights?session_id=5704f068284f12507bd6c15e&init_type=basic_data&csrf_token=f6234ba2463662fe7f4261043dca42d5061b58c1&hub_id=5704ef54284f12507bd6c100&end_date=1463596200000&start_date=1463077800000",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": null,
+					"dataMode": "params",
+					"name": "getInsights - JigarAggarwal",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1463648936752,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "c4d6d56a-59ae-e5df-8fb0-0274ed60ffec",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/rooms/getbyid?session_id=56cd9d47e96bb4bd6f1fd205&room_id=56a664c7b4445d65671e9bac&csrf_token=4147152e351eb024f1d9c0b9f304413707ca6035&hub_id=56a659c0893c266567471c4c",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"data": [],
+					"dataMode": "params",
+					"name": "getById - rushi.gajjar@yahoo.co.in",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1456317376913,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "e455aa4f-3755-f28b-5565-c5f1558c265d",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/getInsights?session_id=56f183f80a5e5e8659bd4d20&init_type=basic_data&csrf_token=5c0aad63855b4d6e45b0a0f2752a3dbe2f8dd9bf&hub_id=56f10dc0339103de4d98f9ad&end_date=1463596200000&start_date=1463077800000",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1463649365867,
+					"name": "getInsights - Makhamdan",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				},
+				{
+					"id": "eec736bc-2e79-1d0d-165f-9ed0238759b3",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://leaf.co.in/app/api/getInsights?session_id=567a9989f2ff36731dc81968&init_type=basic_data&csrf_token=999aab42b529ed4f64874dfbc79544aa6983d638&hub_id=568cc9bad5bda39f0a700b4c&end_date=1462991400000&start_date=1462386600000",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1463040799099,
+					"name": "getInsights - DemoRoom",
+					"description": "",
+					"collectionId": "08df0dcc-b819-f489-bb83-a7909376cecd",
+					"responses": []
+				}
+			]
+		},
+		{
+			"id": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+			"name": "LeafWebApp",
+			"timestamp": 1434633815569,
+			"order": [
+				"a6697336-72fc-6ffa-990e-b6d2245799ae",
+				"448d20b3-11c6-d013-9f0d-1ed462da1e27",
+				"9c099602-2bc9-efa3-9615-7cf34bb4e1b8",
+				"60074bfa-1bd7-d549-a306-eb4108c7703b",
+				"63ee09ae-d842-fb05-75a4-a987e25f6d75",
+				"b9f4a723-9632-6377-7074-253599b6da70",
+				"ba9d554d-e86d-c44d-a707-e503673d4937",
+				"61e35fa3-c4f8-8cdf-b802-c39d2e15c0d7",
+				"12c91d4d-aa41-f5fd-0f8c-39d51bcd0fff",
+				"5dc40118-221c-5055-cbe8-23c98e77cafa",
+				"18074b62-36b8-e7cd-b723-82cf0154ae15",
+				"b30f3f7f-33d5-94fe-8766-3ad1910e3832",
+				"8b63266e-bd9d-7208-639a-078b5b213041",
+				"f964906d-2172-b2b8-2443-17f553404c17",
+				"9b00a746-2eb8-9115-21e0-f62a4b5d13af",
+				"a6c32411-532f-a21e-f3c6-0fad4d677092"
+			],
+			"owner": 0,
+			"sharedWithTeam": false,
+			"synced": true,
+			"subscribed": false,
+			"hasRequests": true,
+			"requests": [
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "12c91d4d-aa41-f5fd-0f8c-39d51bcd0fff",
+					"name": "users/acceptinvite",
+					"description": "",
+					"url": "http://54.169.252.128:3000/api/users/acceptinvite",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_ids",
+							"value": "[\"55031038958f1a0623f8bd1b\"]",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "aa2813557c06403aaa1b82acb131e18a62917114",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "559a8e172e61a11c1e17090a",
+							"type": "text"
+						}
+					],
+					"dataMode": "params",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "18074b62-36b8-e7cd-b723-82cf0154ae15",
+					"name": "users/acceptinvite",
+					"description": "",
+					"url": "http://54.169.252.128:3000/api/users/acceptinvite",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_ids",
+							"value": "[\"55031038958f1a0623f8bd1b\"]",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "aa2813557c06403aaa1b82acb131e18a62917114",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "559a8e172e61a11c1e17090a",
+							"type": "text"
+						}
+					],
+					"dataMode": "params",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "448d20b3-11c6-d013-9f0d-1ed462da1e27",
+					"name": "Init",
+					"description": "Init request for all_data, type=basic_data",
+					"url": "http://54.169.252.128:3000/api/init?session_id=55813be1094aba66384e93fc&init_type=basic_data&csrf_token=7628d9c9b648d6368c62ea0cbcac0ebcc880893d&hub_id=55031038958f1a0623f8bd1b",
+					"method": "GET",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "55031038958f1a0623f8bd1b",
+							"type": "text"
+						},
+						{
+							"key": "invited_user_email",
+							"value": "parth.mehta@leafair.co.in",
+							"type": "text"
+						},
+						{
+							"key": "room_ids",
+							"value": "[ \"55031038958f1a0623f8bd26\"  ]",
+							"type": "text"
+						},
+						{
+							"key": "invited_user_type",
+							"value": "moderate",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "dae62f60308ac903f9efd4a09fd7477ab41354d4",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "557717c1811d0b273334b2ef",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "5dc40118-221c-5055-cbe8-23c98e77cafa",
+					"name": "user/getinvites",
+					"description": "",
+					"url": "http://54.169.252.128:3000/api/users/getinvites?session_id=559a8a7bb416b9dc1d6e5af2&init_type=basic_data&csrf_token=6640dffef389c3149f5be0c62173246be4303f64&hub_id=55031038958f1a0623f8bd1b",
+					"method": "GET",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [],
+					"dataMode": "params",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "60074bfa-1bd7-d549-a306-eb4108c7703b",
+					"name": "UpdateMagicTouch",
+					"description": "updated magic touch devices",
+					"url": "http://54.169.252.128:3000/api/rooms/updatemagictouch",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "csrf_token",
+							"value": "dae62f60308ac903f9efd4a09fd7477ab41354d4",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "557717c1811d0b273334b2ef",
+							"type": "text"
+						},
+						{
+							"key": "hub_id",
+							"value": "55031038958f1a0623f8bd1b",
+							"type": "text"
+						},
+						{
+							"key": "room_id",
+							"value": "55031038958f1a0623f8bd26",
+							"type": "text"
+						},
+						{
+							"key": "enabled",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "devices",
+							"value": "[{   \"lock\": false,   \"device_id\": \"223asd23\",   \"intensity\": 8,   \"state\": 1,   \"enabled\": false }]",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"version": 2,
+					"time": 1435417278436,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "61e35fa3-c4f8-8cdf-b802-c39d2e15c0d7",
+					"name": "users/create",
+					"description": "",
+					"url": "http://54.169.252.128:3000/users/create",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "parth.rmehta@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "parth",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"version": 2,
+					"time": 1435840099215,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "63ee09ae-d842-fb05-75a4-a987e25f6d75",
+					"name": "getNotifications",
+					"description": "",
+					"url": "http://54.169.252.128:3000/api/notifications/get?hub_id=55031038958f1a0623f8bd1b&csrf_token=dae62f60308ac903f9efd4a09fd7477ab41354d4&session_id=557717c1811d0b273334b2ef",
+					"method": "GET",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "55031038958f1a0623f8bd1b",
+							"type": "text"
+						},
+						{
+							"key": "invited_user_email",
+							"value": "potupureddibhargav@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "room_ids",
+							"value": "[ \"55031038958f1a0623f8bd26\"  ]",
+							"type": "text"
+						},
+						{
+							"key": "invited_user_type",
+							"value": "moderate",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "dae62f60308ac903f9efd4a09fd7477ab41354d4",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "557717c1811d0b273334b2ef",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "8b63266e-bd9d-7208-639a-078b5b213041",
+					"name": "/schedulers/getAllFromRoom",
+					"description": "",
+					"url": "http://dev.leafair.co.in/app/api/schedulers/getAllFromRoom?session_id=55a5091416b674f523b9f57a&room_id=55031038958f1a0623f8bd26&csrf_token=54ed327ebb126c11fd74533ad4c4141030672d18&hub_id=55031038958f1a0623f8bd1b",
+					"method": "GET",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [],
+					"dataMode": "params",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "9b00a746-2eb8-9115-21e0-f62a4b5d13af",
+					"name": "getInsights",
+					"description": "",
+					"url": "http://dev.leafair.co.in/app/api/getInsights?session_id=559e92461aa5567d23d99368&init_type=basic_data&csrf_token=5a408ffeb326725a4e00cd3b7637ce5443023b3d&hub_id=559eda2901500af7242f9f0c&end_date=1437350400000&start_date=1437264000000",
+					"method": "GET",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [],
+					"dataMode": "params",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "9c099602-2bc9-efa3-9615-7cf34bb4e1b8",
+					"name": "Login",
+					"description": "Login",
+					"url": "http://54.169.252.128:3000/users/login",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "newuser1@leaf.com",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"version": 2,
+					"time": 1435056887059,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "a6697336-72fc-6ffa-990e-b6d2245799ae",
+					"name": "InviteUser",
+					"description": "",
+					"url": "http://54.169.252.128:3000/api/rooms/inviteuser",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "55031038958f1a0623f8bd1b",
+							"type": "text"
+						},
+						{
+							"key": "invited_user_email",
+							"value": "potupureddibhargav@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "room_ids",
+							"value": "[ \"55031038958f1a0623f8bd26\"  ]",
+							"type": "text"
+						},
+						{
+							"key": "invited_user_type",
+							"value": "moderate",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "dae62f60308ac903f9efd4a09fd7477ab41354d4",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "557717c1811d0b273334b2ef",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "a6c32411-532f-a21e-f3c6-0fad4d677092",
+					"name": "init - DemoRooom",
+					"description": "",
+					"url": "http://localhost:3000/api/init?session_id=559e92461aa5567d23d99368&init_type=basic_data&csrf_token=5a408ffeb326725a4e00cd3b7637ce5443023b3d&hub_id=559eda2901500af7242f9f0c",
+					"method": "GET",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "csrf_token",
+							"value": "dae62f60308ac903f9efd4a09fd7477ab41354d4",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "557717c1811d0b273334b2ef",
+							"type": "text"
+						},
+						{
+							"key": "hub_id",
+							"value": "55031038958f1a0623f8bd1b",
+							"type": "text"
+						},
+						{
+							"key": "room_id",
+							"value": "55031038958f1a0623f8bd26",
+							"type": "text"
+						},
+						{
+							"key": "enabled",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "devices",
+							"value": "[{   \"lock\": false,   \"device_id\": \"223asd23\",   \"intensity\": 8,   \"state\": 1,   \"enabled\": false }]",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "b30f3f7f-33d5-94fe-8766-3ad1910e3832",
+					"name": "/user/verify",
+					"description": "",
+					"url": "http://54.169.252.128/web/users/verify",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "user_id",
+							"value": "55a3df212bd5195e17f1e3db",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "b9f4a723-9632-6377-7074-253599b6da70",
+					"name": "hubs/removeuser",
+					"description": "Removes the user from the entire hub",
+					"url": "http://54.169.252.128:3000/api/users/acceptinvite",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_ids",
+							"value": "[\"55031038958f1a0623f8bd1b\"]",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "aa2813557c06403aaa1b82acb131e18a62917114",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "559a8e172e61a11c1e17090a",
+							"type": "text"
+						}
+					],
+					"dataMode": "params",
+					"timestamp": 0,
+					"version": 2,
+					"time": 1436264963130,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "ba9d554d-e86d-c44d-a707-e503673d4937",
+					"name": "remove_user",
+					"description": "",
+					"url": "http://54.169.252.128:3000/remove_user",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "password",
+							"value": "le@f@ir$",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "parthrmehta@gmail.com",
+							"type": "text"
+						}
+					],
+					"dataMode": "urlencoded",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				},
+				{
+					"collectionId": "3ef8ded7-9bb4-5ca6-5e2a-0b8984c63440",
+					"id": "f964906d-2172-b2b8-2443-17f553404c17",
+					"name": "/hubs/removeuser",
+					"description": "",
+					"url": "http://54.169.252.128:3000/api/hubs/removeuser",
+					"method": "POST",
+					"headers": "X-API-VERSION: 1\n",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "55031038958f1a0623f8bd1b",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "potupureddibhargav@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "csrf_token",
+							"value": "dae62f60308ac903f9efd4a09fd7477ab41354d4",
+							"type": "text"
+						},
+						{
+							"key": "session_id",
+							"value": "557717c1811d0b273334b2ef",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					],
+					"dataMode": "params",
+					"timestamp": 0,
+					"responses": [],
+					"version": 2,
+					"owner": 0,
+					"preRequestScript": "",
+					"tests": ""
+				}
+			]
+		},
+		{
+			"id": "4943e411-b975-ed04-22bd-dc6b01881514",
+			"name": "Prerak's Stage Collection",
+			"description": "",
+			"order": [
+				"87042184-a3dd-e02e-14d8-427dc5721546",
+				"108ae33e-bdc1-85c2-e74d-559843046e6b",
+				"fa47fad2-7716-7475-2909-37e880fad6cd",
+				"6435b3a1-50bf-1d7d-efed-edf2abfd562c",
+				"86b182d8-6dde-0d63-f0c4-0fe6fb118bad",
+				"4485d840-7e59-dbbc-f58a-79bfcd9ff5d0",
+				"22df0664-2090-5fa2-6c91-669d23544253",
+				"8ada5f71-c92a-97e9-4aa8-9c5f79c52a0f",
+				"0762291a-0bd9-1a69-5a2d-011e9b0c92f4",
+				"a3d5989e-ebc6-2fb9-5998-f26cb4909f34",
+				"9ada7495-700a-35d5-6e95-a1709cf8b4d4",
+				"310fe6fa-e32b-3560-7be1-3898e50a356b",
+				"d6b920cc-ef4e-f553-94fa-e2c08e49322f",
+				"f25cf304-2d8b-9076-06ea-26ad6298bd01"
+			],
+			"folders": [],
+			"timestamp": 1449122052777,
+			"synced": false,
+			"remote_id": 0,
+			"owner": "236641",
+			"subscribed": false,
+			"remoteLink": "",
+			"public": false,
+			"createdAt": null,
+			"updatedAt": 1464688015119,
+			"write": true,
+			"requests": [
+				{
+					"id": "0762291a-0bd9-1a69-5a2d-011e9b0c92f4",
+					"headers": "X-API-VERSION: 1\nContent-Type: application/json\n",
+					"url": "https://stage.leaf.co.in/app/api/users/userpresencev2",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "POST",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"data": [
+						{
+							"key": "csrf_token",
+							"value": "a669e1fcb5f2371409470b5912d9fc77a418d4c4",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "session_id",
+							"value": "55dcdb4b5cbc765852b1803f",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "data",
+							"value": "[{\"user_id\":\"trialtrial\",\"device_imei\":\"triltrial\",\"inside_home\":1, \"event_type\":\"WiFi\",\"timestamp\":123123,\"hub_id\":\"trialtrial\",\"ssid\": \"trial\"}, {\"user_id\":\"trialtrial\",\"device_imei\":\"triltrial\",\"inside_home\":1, \"event_type\":\"WiFi\",\"timestamp\":123123,\"hub_id\":\"trialtrial\",\"ssid\": \"trial\"}]",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"name": "Userpresencev2",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1459410349512,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "108ae33e-bdc1-85c2-e74d-559843046e6b",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in:3000/api/getInsights?session_id=56596bb684b5e4ea7e221b92&init_type=basic_data&csrf_token=07577f4580e6ef7e56090164644c3168251dd3fb&hub_id=563610b2dfa4d36b209236de&end_date=1462386600000&start_date=1461868200000",
+					"pathVariables": {},
+					"preRequestScript": null,
+					"method": "GET",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"data": null,
+					"dataMode": "params",
+					"name": "getInsights - Vaibhav",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1462515374533,
+					"version": 2,
+					"responses": [],
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "22df0664-2090-5fa2-6c91-669d23544253",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in:3000/api/init?session_id=56792b1831548256701ecc12&init_type=basic_data&csrf_token=d94535ab768c55e351e998a90f1007ac18717e41",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1450783438617,
+					"name": "INIT - Sahu (Fail)",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "310fe6fa-e32b-3560-7be1-3898e50a356b",
+					"headers": "X-API-VERSION: 1\n",
+					"url": " https://stage.leaf.co.in/app/config/hubs/getLocationSettings?session_id=576d4ddc095ec6d71924a5a5&csrf_token=2f6e60c2dd14d712118f2a0fee6508e15eb4ef83&hub_id=576d4a78095ec6d719248c2b",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1467185953075,
+					"name": "BILL - getLocationSettings",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "4485d840-7e59-dbbc-f58a-79bfcd9ff5d0",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in:3000/api/init?session_id=55fd0ea798c42c5333effeed&init_type=basic_data&csrf_token=70ea5311d4ae537504f91611f8141a4636c36f86&hub_id=55fd0d5e98c42c5333effede",
+					"pathVariables": {},
+					"preRequestScript": "",
+					"method": "GET",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"data": [],
+					"dataMode": "params",
+					"name": "INIT - Dhruv",
+					"description": "",
+					"descriptionFormat": "html",
+					"time": 1450779677514,
+					"version": 2,
+					"responses": [],
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {}
+				},
+				{
+					"id": "6435b3a1-50bf-1d7d-efed-edf2abfd562c",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in/app/api/init?session_id=56596bb684b5e4ea7e221b92&init_type=basic_data&csrf_token=07577f4580e6ef7e56090164644c3168251dd3fb",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1460722418760,
+					"name": "INIT - Vaibhav",
+					"description": "Init request for all_data, type=basic_data",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "86b182d8-6dde-0d63-f0c4-0fe6fb118bad",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in:3000/api/init?session_id=55dcdb4b5cbc765852b1803f&init_type=basic_data&csrf_token=a669e1fcb5f2371409470b5912d9fc77a418d4c4",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1460617420877,
+					"name": "INIT - DemoRoom",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "87042184-a3dd-e02e-14d8-427dc5721546",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in:3000/api/getInsights?session_id=56a0b177a3e240eb5dae59de&init_type=basic_data&csrf_token=d0f68ad372b1a10b3a49d51632d1366e00f24a11&hub_id=569f9601d80c36754fca827e&end_date=1461177000000&start_date=1456770600000",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1461308584525,
+					"name": "getInsights - dhruvbaldawa@gmail.com",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "8ada5f71-c92a-97e9-4aa8-9c5f79c52a0f",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in/app/users/phindex?email_id=dev@leafair.co.in",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1459315831000,
+					"name": "/users/phindex",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "9ada7495-700a-35d5-6e95-a1709cf8b4d4",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://stage.leaf.co.in/app/api/hubs/getbillsettings?session_id=568ea9a0ab4d9e9b1eb7b74e&csrf_token=2a6465dd890b704b5e4ff04d817a3d4d4e10a576&hub_id=568c09859a45f0137c076472",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1465552193400,
+					"name": "BILL - getBillSettings",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "a3d5989e-ebc6-2fb9-5998-f26cb4909f34",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://stage.leaf.co.in/app/api/hubs/updatebill",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "568cc9bad5bda39f0a700b4c",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "csrf_token",
+							"value": "a669e1fcb5f2371409470b5912d9fc77a418d4c4",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "session_id",
+							"value": "55dcdb4b5cbc765852b1803f",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "utility",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "phase",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "billing_number_of_days",
+							"value": "30",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "load",
+							"value": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "2",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "limit_flag",
+							"value": "1",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "bill_limit",
+							"value": "5",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "billing_cycle_date",
+							"value": "12",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "billing_cycle_month",
+							"value": "2",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1460617966523,
+					"name": "BILL - updateBill",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "d6b920cc-ef4e-f553-94fa-e2c08e49322f",
+					"headers": "X-API--VERSION: 1\n",
+					"url": "https://stage.leaf.co.in/app/users/phindex?email_id=tarun@leafair.co.in",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1464090661611,
+					"name": "Analytics - PHI",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "f25cf304-2d8b-9076-06ea-26ad6298bd01",
+					"headers": "X-API-VERSION: 1\nX-USER-AGENT: test_user_agent\nX-APP-VERSION: 999\n",
+					"url": "https://stage.leaf.co.in/app/api/users/adddevicetoken",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "device_id",
+							"value": "test_idd_ios",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "device_token",
+							"value": "test_tokenn_ios",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "user_id",
+							"value": "test_userrrr_ios",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "session_id",
+							"value": "573cb39a2c7cbb5b107a797e",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "csrf_token",
+							"value": "fe48ec491d21f9cd8f49d1a8f4c7e69d4fd53aab",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "os",
+							"value": "0",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1464688186427,
+					"name": "adddevicetoken",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				},
+				{
+					"id": "fa47fad2-7716-7475-2909-37e880fad6cd",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "http://stage.leaf.co.in:3000/api/getInsights?session_id=56a67009893c266567471ec5&csrf_token=584f39808c8d25751e433c89ff8d3abaf5fee5b6&hub_id=56a659c0893c266567471c4c&end_date=1462905000000&start_date=1462386600000",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "GET",
+					"data": [],
+					"dataMode": "params",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1463037781547,
+					"name": "getInsights - Sahu",
+					"description": "",
+					"collectionId": "4943e411-b975-ed04-22bd-dc6b01881514",
+					"responses": []
+				}
+			]
+		},
+		{
+			"id": "ccd83c9d-31d1-9e7b-c88e-2c9d50a34450",
+			"name": "Prerak's Dev Collection",
+			"description": "",
+			"order": [
+				"a4d954a4-63d2-6785-f49c-df82d927363f",
+				"51537b25-9b44-c13e-206b-788d15bba941"
+			],
+			"folders": [],
+			"timestamp": 1451371085965,
+			"synced": false,
+			"remote_id": 0,
+			"owner": "236641",
+			"sharedWithTeam": false,
+			"subscribed": false,
+			"remoteLink": "",
+			"public": false,
+			"createdAt": 1451371085965,
+			"updatedAt": 1459414535631,
+			"write": true,
+			"requests": [
+				{
+					"id": "51537b25-9b44-c13e-206b-788d15bba941",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://dev.leaf.co.in/app/api/users/userpresencev2    ",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "csrf_token",
+							"value": "a6424b9c888ed8b80cbebce009cb7d5192905deb",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "session_id",
+							"value": "54de33d70b5e10fb5e4eb2cc",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "data",
+							"value": "[{\"user_id\":\"trialtrial\",\"device_imei\":\"triltrial\",\"inside_home\":1, \"event_type\":\"WiFi\",\"timestamp\":123123,\"hub_id\":\"trialtrial\",\"ssid\": \"trial\"}, {\"user_id\":\"trialtrial\",\"device_imei\":\"triltrial\",\"inside_home\":1, \"event_type\":\"WiFi\",\"timestamp\":123123,\"hub_id\":\"trialtrial\",\"ssid\": \"trial\"}]",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1459420980206,
+					"name": "Userpresencev2    ",
+					"description": "",
+					"collectionId": "ccd83c9d-31d1-9e7b-c88e-2c9d50a34450",
+					"responses": []
+				},
+				{
+					"id": "a4d954a4-63d2-6785-f49c-df82d927363f",
+					"headers": "X-API-VERSION: 1\n",
+					"url": "https://dev.leaf.co.in/app/api/notifications/replyToNotification",
+					"preRequestScript": "",
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "hub_id",
+							"value": "5617ca0231ddb123327585f5",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "room_id",
+							"value": "56714933344b2d0552ec7a3c",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "csrf_token",
+							"value": "60ab784b3e97f94b46b1670cd45502376b9bd701",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "session_id",
+							"value": "56714cef100c310552c62c1d",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "reply",
+							"value": "{\"text\":\"Yes\",\"reply\":0,\"type\":10.1,\"tid\":8985,\"timestamp\":1451369847506}",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "urlencoded",
+					"version": 2,
+					"tests": "",
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1451389149070,
+					"name": "replyToNotification - AwayMode - debuiem@gmail.com",
+					"description": "",
+					"collectionId": "ccd83c9d-31d1-9e7b-c88e-2c9d50a34450",
+					"responses": []
+				}
+			]
+		}
+	],
+	"environments": [],
+	"headerPresets": [],
+	"globals": []
+}
