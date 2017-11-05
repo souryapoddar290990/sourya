@@ -1,0 +1,502 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class=" is-copy-enabled is-u2f-enabled">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-92d354668263723b226099d22b6ff9945593c2bfe41f4403b91481b735f484b0.css" integrity="sha256-ktNUZoJjcjsiYJnSK2/5lFWTwr/kH0QDuRSBtzX0hLA=" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-7ec438ba7c15d1510c0d2b3bf1f8c7fcd0f7660c73590fa65e728a279787ca91.css" integrity="sha256-fsQ4unwV0VEMDSs78fjH/ND3ZgxzWQ+mXnKKJ5eHypE=" media="all" rel="stylesheet" />
+    
+    
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-0aa4f1a4bd9907ebd09f265a95d4856cabf513dd39b891f737b1b35c39f12564.css" integrity="sha256-CqTxpL2ZB+vQnyZaldSFbKv1E905uJH3N7GzXDnxJWQ=" media="all" rel="stylesheet" />
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width">
+    
+    <title>spellcorrect/delconfusion.data at master · jbhoosreddy/spellcorrect · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars1.githubusercontent.com/u/2481105?v=3&amp;s=400" name="twitter:image:src" /><meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="jbhoosreddy/spellcorrect" name="twitter:title" /><meta content="spellcorrect - A program to correct non-word spelling error in sentences using ngram MAP Language Models, Noisy Channel Model, Error Confusion Matrix and Damerau-Levenshtein Edit Distance." name="twitter:description" />
+      <meta content="https://avatars1.githubusercontent.com/u/2481105?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="jbhoosreddy/spellcorrect" property="og:title" /><meta content="https://github.com/jbhoosreddy/spellcorrect" property="og:url" /><meta content="spellcorrect - A program to correct non-word spelling error in sentences using ngram MAP Language Models, Noisy Channel Model, Error Confusion Matrix and Damerau-Levenshtein Edit Distance." property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+    <meta name="request-id" content="31F84AE2:1560D:1DC47423:5836D37B" data-pjax-transient>
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="31F84AE2:1560D:1DC47423:5836D37B" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+        <meta name="expected-hostname" content="github.com">
+      <meta name="js-proxy-site-detection-payload" content="MjFiYzA5YmM0NmE3NzFlZjJmZmFkMGU3MDUxN2VlYmZiNWRmOWE5MzA4NTAzODk2MDc2YzExYTNkOGMyY2IyNHx7InJlbW90ZV9hZGRyZXNzIjoiNDkuMjQ4Ljc0LjIyNiIsInJlcXVlc3RfaWQiOiIzMUY4NEFFMjoxNTYwRDoxREM0NzQyMzo1ODM2RDM3QiIsInRpbWVzdGFtcCI6MTQ3OTk4ODA5NiwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta name="html-safe-nonce" content="c99d5d99308362b14a8693612ba3fff42ac6a091">
+    <meta content="8461c98d0914e92b206654ad0a95cf94e3610d50" name="form-nonce" />
+
+    <meta http-equiv="x-pjax-version" content="bd4e04a76ea53beeba5327650d7c8e7b">
+    
+
+      
+  <meta name="description" content="spellcorrect - A program to correct non-word spelling error in sentences using ngram MAP Language Models, Noisy Channel Model, Error Confusion Matrix and Damerau-Levenshtein Edit Distance.">
+  <meta name="go-import" content="github.com/jbhoosreddy/spellcorrect git https://github.com/jbhoosreddy/spellcorrect.git">
+
+  <meta content="2481105" name="octolytics-dimension-user_id" /><meta content="jbhoosreddy" name="octolytics-dimension-user_login" /><meta content="21567154" name="octolytics-dimension-repository_id" /><meta content="jbhoosreddy/spellcorrect" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="21567154" name="octolytics-dimension-repository_network_root_id" /><meta content="jbhoosreddy/spellcorrect" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/jbhoosreddy/spellcorrect/commits/master.atom" rel="alternate" title="Recent Commits to spellcorrect:master" type="application/atom+xml">
+
+
+      <link rel="canonical" href="https://github.com/jbhoosreddy/spellcorrect/blob/master/delconfusion.data" data-pjax-transient>
+  </head>
+
+
+  <body class="logged-out  env-production linux vis-public page-blob">
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+          <header class="site-header js-details-container" role="banner">
+  <div class="container-responsive">
+    <a class="header-logo-invertocat" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+
+    <button class="btn-link float-right site-header-toggle js-details-target" type="button" aria-label="Toggle navigation">
+      <svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
+    </button>
+
+    <div class="site-header-menu">
+      <nav class="site-header-nav site-header-nav-main">
+        <a href="/personal" class="js-selected-navigation-item nav-item nav-item-personal" data-ga-click="Header, click, Nav menu - item:personal" data-selected-links="/personal /personal">
+          Personal
+</a>        <a href="/open-source" class="js-selected-navigation-item nav-item nav-item-opensource" data-ga-click="Header, click, Nav menu - item:opensource" data-selected-links="/open-source /open-source">
+          Open source
+</a>        <a href="/business" class="js-selected-navigation-item nav-item nav-item-business" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/partners /business/features /business/customers /business">
+          Business
+</a>        <a href="/explore" class="js-selected-navigation-item nav-item nav-item-explore" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship /showcases /explore">
+          Explore
+</a>      </nav>
+
+      <div class="site-header-actions">
+            <a class="btn btn-primary site-header-actions-btn" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+          <a class="btn site-header-actions-btn mr-1" href="/login?return_to=%2Fjbhoosreddy%2Fspellcorrect%2Fblob%2Fmaster%2Fdelconfusion.data" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+      </div>
+
+        <nav class="site-header-nav site-header-nav-secondary mr-md-3">
+          <a class="nav-item" href="/pricing">Pricing</a>
+          <a class="nav-item" href="/blog">Blog</a>
+          <a class="nav-item" href="https://help.github.com">Support</a>
+          <a class="nav-item header-search-link" href="https://github.com/search">Search GitHub</a>
+              <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/jbhoosreddy/spellcorrect/search" class="js-site-search-form" data-scoped-search-url="/jbhoosreddy/spellcorrect/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+      <div class="header-search-scope">This repository</div>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+    </label>
+</form></div>
+
+        </nav>
+    </div>
+  </div>
+</header>
+
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="/login?return_to=%2Fjbhoosreddy%2Fspellcorrect"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+    Watch
+  </a>
+  <a class="social-count" href="/jbhoosreddy/spellcorrect/watchers"
+     aria-label="1 user is watching this repository">
+    1
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fjbhoosreddy%2Fspellcorrect"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/jbhoosreddy/spellcorrect/stargazers"
+      aria-label="6 users starred this repository">
+      6
+    </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fjbhoosreddy%2Fspellcorrect"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+        Fork
+      </a>
+
+    <a href="/jbhoosreddy/spellcorrect/network" class="social-count"
+       aria-label="3 users forked this repository">
+      3
+    </a>
+  </li>
+</ul>
+
+    <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/jbhoosreddy" class="url fn" rel="author">jbhoosreddy</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/jbhoosreddy/spellcorrect" data-pjax="#js-repo-pjax-container">spellcorrect</a></strong>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/jbhoosreddy/spellcorrect" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /jbhoosreddy/spellcorrect" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/jbhoosreddy/spellcorrect/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /jbhoosreddy/spellcorrect/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">0</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/jbhoosreddy/spellcorrect/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /jbhoosreddy/spellcorrect/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+  <a href="/jbhoosreddy/spellcorrect/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /jbhoosreddy/spellcorrect/projects">
+    <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+    Projects
+    <span class="counter">0</span>
+</a>
+
+
+  <a href="/jbhoosreddy/spellcorrect/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /jbhoosreddy/spellcorrect/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"/></svg>
+    Pulse
+</a>
+  <a href="/jbhoosreddy/spellcorrect/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /jbhoosreddy/spellcorrect/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+
+<a href="/jbhoosreddy/spellcorrect/blob/2a38602fee0f445619399c82e1554e9c09bb6e1c/delconfusion.data" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:98483da4efdaec964a8f7264e2a77d36 -->
+
+<div class="file-navigation js-zeroclipboard-container">
+  
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    
+    type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/jbhoosreddy/spellcorrect/blob/master/delconfusion.data"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="BtnGroup float-right">
+    <a href="/jbhoosreddy/spellcorrect/find/master"
+          class="js-pjax-capture-input btn btn-sm BtnGroup-item"
+          data-pjax
+          data-hotkey="t">
+      Find file
+    </a>
+    <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+  </div>
+  <div class="breadcrumb js-zeroclipboard-target">
+    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/jbhoosreddy/spellcorrect"><span>spellcorrect</span></a></span></span><span class="separator">/</span><strong class="final-path">delconfusion.data</strong>
+  </div>
+</div>
+
+<include-fragment class="commit-tease" src="/jbhoosreddy/spellcorrect/contributors/master/delconfusion.data">
+  <div>
+    Fetching contributors&hellip;
+  </div>
+
+  <div class="commit-tease-contributors">
+    <img alt="" class="loader-loading float-left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
+    <span class="loader-error">Cannot retrieve contributors at this time</span>
+  </div>
+</include-fragment>
+
+<div class="file">
+  <div class="file-header">
+  <div class="file-actions">
+
+    <div class="BtnGroup">
+      <a href="/jbhoosreddy/spellcorrect/raw/master/delconfusion.data" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
+        <a href="/jbhoosreddy/spellcorrect/blame/master/delconfusion.data" class="btn btn-sm js-update-url-with-hash BtnGroup-item">Blame</a>
+      <a href="/jbhoosreddy/spellcorrect/commits/master/delconfusion.data" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
+    </div>
+
+
+        <button type="button" class="btn-octicon disabled tooltipped tooltipped-nw"
+          aria-label="You must be signed in to make or propose changes">
+          <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+        </button>
+        <button type="button" class="btn-octicon btn-octicon-danger disabled tooltipped tooltipped-nw"
+          aria-label="You must be signed in to make or propose changes">
+          <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+        </button>
+  </div>
+
+  <div class="file-info">
+      1 lines (1 sloc)
+      <span class="file-info-divider"></span>
+    6.37 KB
+  </div>
+</div>
+
+  
+
+  <div itemprop="text" class="blob-wrapper data type-text">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tr>
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line">{&#39;tz&#39;: 0, &#39;tx&#39;: 0, &#39;ty&#39;: 2, &#39;tv&#39;: 0, &#39;tw&#39;: 4, &#39;tt&#39;: 137, &#39;tu&#39;: 14, &#39;tr&#39;: 203, &#39;ts&#39;: 5, &#39;tp&#39;: 1, &#39;tq&#39;: 0, &#39;tn&#39;: 3, &#39;to&#39;: 11, &#39;tl&#39;: 31, &#39;tm&#39;: 3, &#39;tj&#39;: 0, &#39;tk&#39;: 0, &#39;th&#39;: 49, &#39;ti&#39;: 427, &#39;tf&#39;: 1, &#39;tg&#39;: 7, &#39;td&#39;: 0, &#39;te&#39;: 76, &#39;tb&#39;: 1, &#39;tc&#39;: 2, &#39;ta&#39;: 24, &#39;me&#39;: 33, &#39;md&#39;: 0, &#39;mg&#39;: 0, &#39;mf&#39;: 0, &#39;ma&#39;: 15, &#39;mc&#39;: 0, &#39;mb&#39;: 10, &#39;mm&#39;: 180, &#39;ml&#39;: 0, &#39;mo&#39;: 7, &#39;mn&#39;: 7, &#39;mi&#39;: 42, &#39;mh&#39;: 1, &#39;mk&#39;: 0, &#39;mj&#39;: 0, &#39;mu&#39;: 4, &#39;mt&#39;: 0, &#39;mw&#39;: 0, &#39;mv&#39;: 0, &#39;mq&#39;: 0, &#39;mp&#39;: 31, &#39;ms&#39;: 9, &#39;mr&#39;: 0, &#39;my&#39;: 0, &#39;mx&#39;: 0, &#39;mz&#39;: 0, &#39;fp&#39;: 0, &#39;fq&#39;: 0, &#39;fr&#39;: 11, &#39;fs&#39;: 0, &#39;ft&#39;: 8, &#39;fu&#39;: 1, &#39;fv&#39;: 0, &#39;fw&#39;: 0, &#39;fx&#39;: 0, &#39;fy&#39;: 1, &#39;fz&#39;: 0, &#39;fa&#39;: 4, &#39;fb&#39;: 0, &#39;fc&#39;: 0, &#39;fd&#39;: 0, &#39;fe&#39;: 13, &#39;ff&#39;: 46, &#39;fg&#39;: 0, &#39;fh&#39;: 0, &#39;fi&#39;: 79, &#39;fj&#39;: 0, &#39;fk&#39;: 0, &#39;fl&#39;: 12, &#39;fm&#39;: 0, &#39;fn&#39;: 0, &#39;fo&#39;: 4, &#39;yi&#39;: 1, &#39;yh&#39;: 0, &#39;yk&#39;: 0, &#39;yj&#39;: 0, &#39;ym&#39;: 2, &#39;yl&#39;: 1, &#39;yo&#39;: 1, &#39;yn&#39;: 1, &#39;ya&#39;: 2, &#39;yc&#39;: 34, &#39;yb&#39;: 1, &#39;ye&#39;: 2, &#39;yd&#39;: 0, &#39;yg&#39;: 1, &#39;yf&#39;: 0, &#39;yy&#39;: 0, &#39;yx&#39;: 0, &#39;yz&#39;: 0, &#39;yq&#39;: 0, &#39;yp&#39;: 1, &#39;ys&#39;: 17, &#39;yr&#39;: 0, &#39;yu&#39;: 0, &#39;yt&#39;: 1, &#39;yw&#39;: 1, &#39;yv&#39;: 0, &#39;rt&#39;: 68, &#39;ru&#39;: 0, &#39;rv&#39;: 10, &#39;rw&#39;: 1, &#39;rp&#39;: 2, &#39;rq&#39;: 0, &#39;rr&#39;: 277, &#39;rs&#39;: 103, &#39;rx&#39;: 0, &#39;ry&#39;: 27, &#39;rz&#39;: 0, &#39;rd&#39;: 19, &#39;re&#39;: 188, &#39;rf&#39;: 0, &#39;rg&#39;: 11, &#39;ra&#39;: 63, &#39;rb&#39;: 4, &#39;rc&#39;: 12, &#39;rl&#39;: 33, &#39;rm&#39;: 7, &#39;rn&#39;: 157, &#39;ro&#39;: 21, &#39;rh&#39;: 5, &#39;ri&#39;: 132, &#39;rj&#39;: 0, &#39;rk&#39;: 3, &#39;kc&#39;: 0, &#39;kb&#39;: 0, &#39;ka&#39;: 4, &#39;kg&#39;: 8, &#39;kf&#39;: 1, &#39;ke&#39;: 15, &#39;kd&#39;: 1, &#39;kk&#39;: 1, &#39;kj&#39;: 0, &#39;ki&#39;: 5, &#39;kh&#39;: 1, &#39;ko&#39;: 0, &#39;kn&#39;: 17, &#39;km&#39;: 0, &#39;kl&#39;: 3, &#39;ks&#39;: 5, &#39;kr&#39;: 1, &#39;kq&#39;: 0, &#39;kp&#39;: 0, &#39;kw&#39;: 1, &#39;kv&#39;: 0, &#39;ku&#39;: 0, &#39;kt&#39;: 0, &#39;kz&#39;: 0, &#39;ky&#39;: 0, &#39;kx&#39;: 0, &#39;dn&#39;: 3, &#39;do&#39;: 3, &#39;dl&#39;: 8, &#39;dm&#39;: 4, &#39;dj&#39;: 1, &#39;dk&#39;: 1, &#39;dh&#39;: 0, &#39;di&#39;: 62, &#39;df&#39;: 0, &#39;dg&#39;: 10, &#39;dd&#39;: 25, &#39;de&#39;: 45, &#39;db&#39;: 0, &#39;dc&#39;: 7, &#39;da&#39;: 12, &#39;dz&#39;: 0, &#39;dx&#39;: 0, &#39;dy&#39;: 6, &#39;dv&#39;: 2, &#39;dw&#39;: 0, &#39;dt&#39;: 0, &#39;du&#39;: 3, &#39;dr&#39;: 11, &#39;ds&#39;: 1, &#39;dp&#39;: 0, &#39;dq&#39;: 0, &#39;wg&#39;: 0, &#39;wf&#39;: 1, &#39;we&#39;: 11, &#39;wd&#39;: 1, &#39;wc&#39;: 0, &#39;wb&#39;: 0, &#39;wa&#39;: 40, &#39;wo&#39;: 2, &#39;wn&#39;: 2, &#39;wm&#39;: 0, &#39;wl&#39;: 1, &#39;wk&#39;: 0, &#39;wj&#39;: 0, &#39;wi&#39;: 15, &#39;wh&#39;: 11, &#39;ww&#39;: 0, &#39;wv&#39;: 0, &#39;wu&#39;: 0, &#39;wt&#39;: 0, &#39;ws&#39;: 24, &#39;wr&#39;: 2, &#39;wq&#39;: 0, &#39;wp&#39;: 0, &#39;wz&#39;: 0, &#39;wy&#39;: 0, &#39;wx&#39;: 0, &#39;pr&#39;: 58, &#39;ps&#39;: 1, &#39;pp&#39;: 93, &#39;pq&#39;: 0, &#39;pv&#39;: 0, &#39;pw&#39;: 0, &#39;pt&#39;: 18, &#39;pu&#39;: 2, &#39;pz&#39;: 0, &#39;px&#39;: 0, &#39;py&#39;: 0, &#39;pb&#39;: 0, &#39;pc&#39;: 0, &#39;pa&#39;: 25, &#39;pf&#39;: 0, &#39;pg&#39;: 0, &#39;pd&#39;: 0, &#39;pe&#39;: 22, &#39;pj&#39;: 0, &#39;pk&#39;: 0, &#39;ph&#39;: 12, &#39;pi&#39;: 15, &#39;pn&#39;: 0, &#39;po&#39;: 30, &#39;pl&#39;: 28, &#39;pm&#39;: 1, &#39;iy&#39;: 1, &#39;ix&#39;: 0, &#39;iz&#39;: 7, &#39;iq&#39;: 0, &#39;ip&#39;: 7, &#39;is&#39;: 71, &#39;ir&#39;: 16, &#39;iu&#39;: 1, &#39;it&#39;: 64, &#39;iw&#39;: 0, &#39;iv&#39;: 1, &#39;ii&#39;: 1, &#39;ih&#39;: 0, &#39;ik&#39;: 0, &#39;ij&#39;: 0, &#39;im&#39;: 14, &#39;il&#39;: 38, &#39;io&#39;: 41, &#39;in&#39;: 82, &#39;ia&#39;: 26, &#39;ic&#39;: 60, &#39;ib&#39;: 1, &#39;ie&#39;: 23, &#39;id&#39;: 26, &#39;ig&#39;: 9, &#39;if&#39;: 1, &#39;bd&#39;: 0, &#39;be&#39;: 22, &#39;bf&#39;: 0, &#39;bg&#39;: 0, &#39;ba&#39;: 2, &#39;bb&#39;: 2, &#39;bc&#39;: 1, &#39;bl&#39;: 26, &#39;bm&#39;: 0, &#39;bn&#39;: 0, &#39;bo&#39;: 2, &#39;bh&#39;: 0, &#39;bi&#39;: 183, &#39;bj&#39;: 0, &#39;bk&#39;: 0, &#39;bt&#39;: 0, &#39;bu&#39;: 6, &#39;bv&#39;: 1, &#39;bw&#39;: 0, &#39;bp&#39;: 0, &#39;bq&#39;: 0, &#39;br&#39;: 6, &#39;bs&#39;: 17, &#39;bx&#39;: 0, &#39;by&#39;: 0, &#39;bz&#39;: 0, &#39;#g&#39;: 7, &#39;uy&#39;: 1, &#39;ux&#39;: 0, &#39;uz&#39;: 0, &#39;uu&#39;: 0, &#39;ut&#39;: 66, &#39;uw&#39;: 0, &#39;uv&#39;: 0, &#39;uq&#39;: 0, &#39;up&#39;: 0, &#39;us&#39;: 31, &#39;ur&#39;: 129, &#39;um&#39;: 2, &#39;ul&#39;: 39, &#39;uo&#39;: 1, &#39;un&#39;: 111, &#39;ui&#39;: 28, &#39;uh&#39;: 0, &#39;uk&#39;: 0, &#39;uj&#39;: 0, &#39;ue&#39;: 15, &#39;ud&#39;: 10, &#39;ug&#39;: 1, &#39;uf&#39;: 0, &#39;ua&#39;: 26, &#39;uc&#39;: 9, &#39;ub&#39;: 6, &#39;#e&#39;: 20, &#39;nh&#39;: 0, &#39;ni&#39;: 191, &#39;nj&#39;: 0, &#39;nk&#39;: 0, &#39;nl&#39;: 0, &#39;nm&#39;: 17, &#39;nn&#39;: 144, &#39;no&#39;: 21, &#39;na&#39;: 21, &#39;nb&#39;: 0, &#39;nc&#39;: 42, &#39;nd&#39;: 71, &#39;ne&#39;: 68, &#39;nf&#39;: 1, &#39;ng&#39;: 160, &#39;nx&#39;: 0, &#39;ny&#39;: 2, &#39;nz&#39;: 0, &#39;np&#39;: 0, &#39;nq&#39;: 0, &#39;nr&#39;: 0, &#39;ns&#39;: 127, &#39;nt&#39;: 87, &#39;nu&#39;: 43, &#39;nv&#39;: 1, &#39;nw&#39;: 1, &#39;gw&#39;: 0, &#39;gv&#39;: 0, &#39;gu&#39;: 22, &#39;gt&#39;: 1, &#39;gs&#39;: 7, &#39;gr&#39;: 52, &#39;gq&#39;: 0, &#39;gp&#39;: 0, &#39;gz&#39;: 0, &#39;gy&#39;: 1, &#39;gx&#39;: 0, &#39;gg&#39;: 37, &#39;gf&#39;: 1, &#39;ge&#39;: 83, &#39;gd&#39;: 2, &#39;gc&#39;: 0, &#39;gb&#39;: 0, &#39;ga&#39;: 25, &#39;go&#39;: 4, &#39;gn&#39;: 29, &#39;gm&#39;: 0, &#39;gl&#39;: 3, &#39;gk&#39;: 0, &#39;gj&#39;: 0, &#39;gi&#39;: 39, &#39;gh&#39;: 25, &#39;zl&#39;: 0, &#39;zm&#39;: 0, &#39;zn&#39;: 0, &#39;zo&#39;: 0, &#39;zh&#39;: 0, &#39;zi&#39;: 0, &#39;zj&#39;: 0, &#39;zk&#39;: 0, &#39;zd&#39;: 0, &#39;ze&#39;: 2, &#39;zf&#39;: 0, &#39;zg&#39;: 0, &#39;za&#39;: 1, &#39;zb&#39;: 0, &#39;zc&#39;: 0, &#39;zx&#39;: 0, &#39;zy&#39;: 0, &#39;zz&#39;: 2, &#39;zt&#39;: 0, &#39;zu&#39;: 0, &#39;zv&#39;: 0, &#39;zw&#39;: 0, &#39;zp&#39;: 0, &#39;zq&#39;: 0, &#39;zr&#39;: 0, &#39;zs&#39;: 0, &#39;#s&#39;: 26, &#39;#q&#39;: 0, &#39;sz&#39;: 0, &#39;sy&#39;: 1, &#39;sx&#39;: 0, &#39;ss&#39;: 265, &#39;sr&#39;: 4, &#39;sq&#39;: 0, &#39;sp&#39;: 30, &#39;sw&#39;: 0, &#39;sv&#39;: 0, &#39;su&#39;: 21, &#39;st&#39;: 124, &#39;sk&#39;: 0, &#39;sj&#39;: 0, &#39;si&#39;: 231, &#39;sh&#39;: 18, &#39;so&#39;: 30, &#39;sn&#39;: 0, &#39;sm&#39;: 1, &#39;sl&#39;: 2, &#39;sc&#39;: 27, &#39;sb&#39;: 0, &#39;sa&#39;: 16, &#39;sg&#39;: 0, &#39;sf&#39;: 1, &#39;se&#39;: 74, &#39;sd&#39;: 0, &#39;lf&#39;: 0, &#39;lg&#39;: 0, &#39;ld&#39;: 6, &#39;le&#39;: 48, &#39;lb&#39;: 0, &#39;lc&#39;: 1, &#39;la&#39;: 24, &#39;ln&#39;: 0, &#39;lo&#39;: 29, &#39;ll&#39;: 211, &#39;lm&#39;: 2, &#39;lj&#39;: 0, &#39;lk&#39;: 0, &#39;lh&#39;: 0, &#39;li&#39;: 217, &#39;lv&#39;: 2, &#39;lw&#39;: 0, &#39;lt&#39;: 7, &#39;lu&#39;: 3, &#39;lr&#39;: 2, &#39;ls&#39;: 12, &#39;lp&#39;: 0, &#39;lq&#39;: 0, &#39;lz&#39;: 0, &#39;lx&#39;: 0, &#39;ly&#39;: 11, &#39;em&#39;: 9, &#39;el&#39;: 32, &#39;eo&#39;: 19, &#39;en&#39;: 76, &#39;ei&#39;: 6, &#39;eh&#39;: 1, &#39;ek&#39;: 0, &#39;ej&#39;: 0, &#39;ee&#39;: 89, &#39;ed&#39;: 74, &#39;eg&#39;: 1, &#39;ef&#39;: 3, &#39;ea&#39;: 80, &#39;ec&#39;: 50, &#39;eb&#39;: 1, &#39;ey&#39;: 1, &#39;ex&#39;: 7, &#39;ez&#39;: 0, &#39;eu&#39;: 8, &#39;et&#39;: 34, &#39;ew&#39;: 1, &#39;ev&#39;: 2, &#39;eq&#39;: 1, &#39;ep&#39;: 9, &#39;es&#39;: 223, &#39;er&#39;: 237, &#39;xj&#39;: 0, &#39;xk&#39;: 0, &#39;xh&#39;: 1, &#39;xi&#39;: 0, &#39;xn&#39;: 0, &#39;xo&#39;: 0, &#39;xl&#39;: 0, &#39;xm&#39;: 0, &#39;xb&#39;: 0, &#39;xc&#39;: 17, &#39;xa&#39;: 1, &#39;xf&#39;: 0, &#39;xg&#39;: 0, &#39;xd&#39;: 0, &#39;xe&#39;: 3, &#39;xz&#39;: 0, &#39;xx&#39;: 0, &#39;xy&#39;: 1, &#39;xr&#39;: 0, &#39;xs&#39;: 0, &#39;xp&#39;: 6, &#39;xq&#39;: 0, &#39;xv&#39;: 0, &#39;xw&#39;: 0, &#39;xt&#39;: 5, &#39;xu&#39;: 0, &#39;#f&#39;: 20, &#39;qq&#39;: 0, &#39;qp&#39;: 0, &#39;qs&#39;: 0, &#39;qr&#39;: 0, &#39;qu&#39;: 18, &#39;qt&#39;: 0, &#39;qw&#39;: 0, &#39;qv&#39;: 0, &#39;qy&#39;: 0, &#39;qx&#39;: 0, &#39;qz&#39;: 0, &#39;qa&#39;: 0, &#39;qc&#39;: 0, &#39;qb&#39;: 0, &#39;qe&#39;: 0, &#39;qd&#39;: 0, &#39;qg&#39;: 0, &#39;qf&#39;: 0, &#39;qi&#39;: 0, &#39;qh&#39;: 0, &#39;qk&#39;: 0, &#39;qj&#39;: 0, &#39;qm&#39;: 0, &#39;ql&#39;: 0, &#39;qo&#39;: 0, &#39;qn&#39;: 0, &#39;#o&#39;: 5, &#39;#n&#39;: 5, &#39;#m&#39;: 16, &#39;#c&#39;: 41, &#39;#b&#39;: 14, &#39;#a&#39;: 20, &#39;#k&#39;: 6, &#39;#j&#39;: 3, &#39;#i&#39;: 20, &#39;#h&#39;: 6, &#39;jx&#39;: 0, &#39;jy&#39;: 0, &#39;jz&#39;: 0, &#39;#l&#39;: 22, &#39;jt&#39;: 0, &#39;ju&#39;: 1, &#39;jv&#39;: 0, &#39;jw&#39;: 0, &#39;jp&#39;: 0, &#39;jq&#39;: 0, &#39;jr&#39;: 0, &#39;js&#39;: 0, &#39;jl&#39;: 0, &#39;jm&#39;: 0, &#39;jn&#39;: 1, &#39;jo&#39;: 1, &#39;jh&#39;: 0, &#39;ji&#39;: 0, &#39;jj&#39;: 0, &#39;jk&#39;: 0, &#39;jd&#39;: 0, &#39;je&#39;: 1, &#39;jf&#39;: 0, &#39;jg&#39;: 0, &#39;#w&#39;: 24, &#39;ja&#39;: 0, &#39;jb&#39;: 0, &#39;jc&#39;: 0, &#39;#z&#39;: 2, &#39;#y&#39;: 0, &#39;#x&#39;: 0, &#39;ck&#39;: 9, &#39;cj&#39;: 0, &#39;ci&#39;: 320, &#39;ch&#39;: 24, &#39;co&#39;: 33, &#39;cn&#39;: 0, &#39;cm&#39;: 0, &#39;cl&#39;: 17, &#39;cc&#39;: 70, &#39;cb&#39;: 0, &#39;ca&#39;: 37, &#39;cg&#39;: 0, &#39;cf&#39;: 0, &#39;ce&#39;: 63, &#39;cd&#39;: 0, &#39;cz&#39;: 0, &#39;cy&#39;: 1, &#39;cx&#39;: 0, &#39;#r&#39;: 28, &#39;cs&#39;: 6, &#39;cr&#39;: 46, &#39;cq&#39;: 0, &#39;cp&#39;: 0, &#39;cw&#39;: 0, &#39;cv&#39;: 0, &#39;cu&#39;: 17, &#39;ct&#39;: 54, &#39;#d&#39;: 31, &#39;#p&#39;: 17, &#39;#v&#39;: 1, &#39;#u&#39;: 2, &#39;#t&#39;: 6, &#39;va&#39;: 9, &#39;vb&#39;: 0, &#39;vc&#39;: 0, &#39;vd&#39;: 0, &#39;ve&#39;: 58, &#39;vf&#39;: 0, &#39;vg&#39;: 0, &#39;vh&#39;: 0, &#39;vi&#39;: 31, &#39;vj&#39;: 0, &#39;vk&#39;: 0, &#39;vl&#39;: 0, &#39;vm&#39;: 0, &#39;vn&#39;: 0, &#39;vo&#39;: 2, &#39;vp&#39;: 0, &#39;vq&#39;: 0, &#39;vr&#39;: 1, &#39;vs&#39;: 0, &#39;vt&#39;: 0, &#39;vu&#39;: 0, &#39;vv&#39;: 0, &#39;vw&#39;: 0, &#39;vx&#39;: 0, &#39;vy&#39;: 1, &#39;vz&#39;: 0, &#39;oo&#39;: 26, &#39;on&#39;: 70, &#39;om&#39;: 9, &#39;ol&#39;: 13, &#39;ok&#39;: 0, &#39;oj&#39;: 1, &#39;oi&#39;: 4, &#39;oh&#39;: 0, &#39;og&#39;: 5, &#39;of&#39;: 0, &#39;oe&#39;: 8, &#39;od&#39;: 6, &#39;oc&#39;: 3, &#39;ob&#39;: 4, &#39;oa&#39;: 11, &#39;oz&#39;: 0, &#39;oy&#39;: 1, &#39;ox&#39;: 0, &#39;ow&#39;: 5, &#39;ov&#39;: 2, &#39;ou&#39;: 47, &#39;ot&#39;: 13, &#39;os&#39;: 20, &#39;or&#39;: 98, &#39;oq&#39;: 0, &#39;op&#39;: 20, &#39;hz&#39;: 0, &#39;hx&#39;: 0, &#39;hy&#39;: 1, &#39;hr&#39;: 15, &#39;hs&#39;: 1, &#39;hp&#39;: 0, &#39;hq&#39;: 0, &#39;hv&#39;: 0, &#39;hw&#39;: 1, &#39;ht&#39;: 26, &#39;hu&#39;: 0, &#39;hj&#39;: 0, &#39;hk&#39;: 0, &#39;hh&#39;: 25, &#39;hi&#39;: 24, &#39;hn&#39;: 9, &#39;ho&#39;: 22, &#39;hl&#39;: 7, &#39;hm&#39;: 1, &#39;hb&#39;: 12, &#39;hc&#39;: 1, &#39;ha&#39;: 15, &#39;hf&#39;: 0, &#39;hg&#39;: 0, &#39;hd&#39;: 3, &#39;he&#39;: 20, &#39;aa&#39;: 0, &#39;ac&#39;: 58, &#39;ab&#39;: 7, &#39;ae&#39;: 3, &#39;ad&#39;: 21, &#39;ag&#39;: 18, &#39;af&#39;: 5, &#39;ai&#39;: 61, &#39;ah&#39;: 8, &#39;ak&#39;: 4, &#39;aj&#39;: 0, &#39;am&#39;: 5, &#39;al&#39;: 43, &#39;ao&#39;: 0, &#39;an&#39;: 53, &#39;aq&#39;: 0, &#39;ap&#39;: 9, &#39;as&#39;: 28, &#39;ar&#39;: 98, &#39;au&#39;: 62, &#39;at&#39;: 53, &#39;aw&#39;: 0, &#39;av&#39;: 1, &#39;ay&#39;: 2, &#39;ax&#39;: 0, &#39;az&#39;: 0}</td>
+      </tr>
+</table>
+
+  </div>
+
+</div>
+
+<button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
+<div id="jump-to-line" style="display:none">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+    <button type="submit" class="btn">Go</button>
+</form></div>
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links float-right">
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2016 <span title="0.10441s from github-fe124-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+
+    <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+      </button>
+      You can't perform that action at this time.
+    </div>
+
+
+      
+      <script crossorigin="anonymous" integrity="sha256-q1D7/rLAuHSPor/tXQvMz8BrgKvykFhqfRxvI5AvXfM=" src="https://assets-cdn.github.com/assets/frameworks-ab50fbfeb2c0b8748fa2bfed5d0bcccfc06b80abf290586a7d1c6f23902f5df3.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-7ueovoPeAq1yt0hl7zaTSNcsvvC2zgdnMRyn0fqv1Ao=" src="https://assets-cdn.github.com/assets/github-eee7a8be83de02ad72b74865ef369348d72cbef0b6ce0767311ca7d1faafd40a.js"></script>
+      
+      
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+    <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+  </body>
+</html>
+
